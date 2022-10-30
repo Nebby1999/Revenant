@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -61,3 +61,37 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Thunderkit Related
+ProjectRevenant/Assets/ThunderKitSettings/Logs/*
+ProjectRevenant/ThunderKit/
+
+#Other
+ProjectRevenant/Assets/Plugins/NGTools/*
+ProjectRevenant/Assets/Resources/*
+ProjectRevenant/Packages/*
+!ProjectRevenant/Packages/packages-lock.json
+!ProjectRevenant/Packages/manifest.json
+
+##-------##
+## wwise ##
+##-------##
+
+ProjectRevenant/ProjectRevenant_WwiseProject/.cache/
+ProjectRevenant/ProjectRevenant_WwiseProject/*.prof
+ProjectRevenant/ProjectRevenant_WwiseProject/*_WwiseProject.*.validationcache
+ProjectRevenant/ProjectRevenant_WwiseProject/*_WwiseProject.*.wsettings
+ProjectRevenant/ProjectRevenant_WwiseProject/**/*.akd
+
+ProjectRevenant/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+
+# notes:
+# 1) if any other files go in Assets/Wwise/Editor/ProjectData/ besides AkWwiseProjectData.asset*,
+#    then don't ignore Assets/Wwise/Editor/ProjectData.meta. If AkWwiseProjectData.asset is the only item in there,
+#    then, it's OK to ignore this file.
+# 
+ProjectRevenant/Assets/Wwise/Editor/ProjectData.meta
+ProjectRevenant/Assets/Wwise/Deployment/Plugins/Mac/*
+
+#Integration zips
+ProjectRevenant/WwiseUnityIntegration_Windows_Src.zip
+ProjectRevenant/WwiseUnityIntegration_Mac_Src.zip
