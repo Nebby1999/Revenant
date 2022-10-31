@@ -9,7 +9,7 @@ using FL = EntityStates.GolemMonster.FireLaser;
 
 namespace EntityStates.Revenant.Weapon
 {
-    public class FireLaser : RevenantRocketLauncherBaseState
+    public class FireLasers : RevenantRocketLauncherBaseState
     {
         [HideInInspector]
         public static GameObject hitEffectPrefab;

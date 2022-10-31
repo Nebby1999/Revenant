@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPrefabs: []
   masterPrefabs: []
-  projectilePrefabs: []
+  projectilePrefabs:
+  - {fileID: 7950396951582464409, guid: 101357b03e6ebaf4eb943d6444adbfb7, type: 3}
+  - {fileID: 2311183027594656501, guid: 0dfdce839b7521d4d8f498a7c29ac343, type: 3}
   gameModePrefabs: []
   effectPrefabs: []
   networkedObjectPrefabs: []
   skillDefs:
   - {fileID: 11400000, guid: c39c156d917c2894c92599eb5bb10d1d, type: 2}
   - {fileID: 11400000, guid: 9e1774ee6efda434a85f1fac214549f5, type: 2}
-  - {fileID: 0}
   skillFamilies:
   - {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
   - {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}

@@ -10,28 +10,30 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.Weapon.FireLaser
+  m_Name: EntityStates.Revenant.Weapon.FireRockets
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.Revenant.Weapon.FireLaser, Revenant, Version=0.0.0.0,
+    assemblyQualifiedName: EntityStates.Revenant.Weapon.FireRockets, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
+    - fieldName: rocketPrefab
+      fieldValue:
+        stringValue: 
+        objectValue: {fileID: 2311183027594656501, guid: 0dfdce839b7521d4d8f498a7c29ac343,
+          type: 3}
+    - fieldName: guidedRocketPrefab
+      fieldValue:
+        stringValue: 
+        objectValue: {fileID: 7950396951582464409, guid: 101357b03e6ebaf4eb943d6444adbfb7,
+          type: 3}
     - fieldName: damageCoef
       fieldValue:
         stringValue: 1
         objectValue: {fileID: 0}
     - fieldName: force
       fieldValue:
-        stringValue: 1
-        objectValue: {fileID: 0}
-    - fieldName: baseDuration
-      fieldValue:
-        stringValue: 2
-        objectValue: {fileID: 0}
-    - fieldName: muzzleEffectPrefab
-      fieldValue:
-        stringValue: 
+        stringValue: 6
         objectValue: {fileID: 0}
     - fieldName: leftMuzzle
       fieldValue:
@@ -40,4 +42,12 @@ MonoBehaviour:
     - fieldName: rightMuzzle
       fieldValue:
         stringValue: MuzzleR
+        objectValue: {fileID: 0}
+    - fieldName: baseDuration
+      fieldValue:
+        stringValue: 1
+        objectValue: {fileID: 0}
+    - fieldName: muzzleEffectPrefab
+      fieldValue:
+        stringValue: 
         objectValue: {fileID: 0}

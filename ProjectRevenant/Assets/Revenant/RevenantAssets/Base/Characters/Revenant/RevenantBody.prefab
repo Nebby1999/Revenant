@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 7907322594614658884}
   - component: {fileID: 6452766617878345701}
   m_Layer: 0
-  m_Name: RevenantBody
+  m_Name: RevenantBodyBak
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   hideCrosshair: 0
   aimOriginTransform: {fileID: 657640059031357106}
   hullClassification: 0
-  portraitIcon: {fileID: 2800000, guid: 7d90bd0331ab07e45b04215c5f0c9308, type: 3}
+  portraitIcon: {fileID: 0}
   bodyColor: {r: 0.7490196, g: 0.2509804, b: 0.24313726, a: 1}
   isChampion: 0
   currentVehicle: {fileID: 0}
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hideAllyCardDisplay: 0
-  _teamIndex: 1
+  _teamIndex: -1
 --- !u!114 &2780693990609444101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &7907322594614658884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   Capsule: {fileID: 9056065600922460842}
   Rigidbody: {fileID: 8730269997020027560}
   CapsuleRadius: 0.5
-  CapsuleHeight: 1
+  CapsuleHeight: 2
   CapsuleYOffset: 0
   CapsulePhysicsMaterial: {fileID: 0}
   DetectDiscreteCollisions: 0
@@ -799,6 +799,70 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6559652732835241178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6248657981718779076}
+  - component: {fileID: 1294126446225152739}
+  - component: {fileID: 8385928318614145010}
+  m_Layer: 12
+  m_Name: MainHurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6248657981718779076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559652732835241178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1155860272108466216}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1294126446225152739
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559652732835241178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8385928318614145010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559652732835241178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -202159943, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthComponent: {fileID: 8551317353882768160}
+  isBullseye: 1
+  isSniperTarget: 0
+  damageModifier: 0
+  hurtBoxGroup: {fileID: 5114544595564888937}
+  indexInGroup: 0
 --- !u!1 &7207320884822472287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1118,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5157115645456379268}
+  - {fileID: 6248657981718779076}
   m_Father: {fileID: 7989365846992970697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -1111,9 +1176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformPairs:
-  - name: RocketR
+  - name: MuzzleR
     transform: {fileID: 8658030754649330569}
-  - name: RocketL
+  - name: MuzzleL
     transform: {fileID: 6034339253702092746}
 --- !u!114 &5114544595564888937
 MonoBehaviour:
@@ -1127,9 +1192,10 @@ MonoBehaviour:
   m_Script: {fileID: -1792105662, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtBoxes: []
-  mainHurtBox: {fileID: 0}
-  bullseyeCount: 0
+  hurtBoxes:
+  - {fileID: 8385928318614145010}
+  mainHurtBox: {fileID: 8385928318614145010}
+  bullseyeCount: 1
 --- !u!114 &6397785433741994116
 MonoBehaviour:
   m_ObjectHideFlags: 0

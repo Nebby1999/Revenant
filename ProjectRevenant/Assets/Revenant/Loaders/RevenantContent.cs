@@ -29,7 +29,12 @@ namespace Revenant
             {
                 () =>
                 {
+                    RevLog.Message($"Loading Started");
                     new Modules.CharacterModule().Initialize();
+                },
+                () =>
+                {
+                    //new Modules.ProjectileModule().Initialize();
                 },
                 () =>
                 {
@@ -39,6 +44,7 @@ namespace Revenant
                                       .Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type) && !type.IsAbstract)
                                       .ToList()
                                       .ForEach(state => HG.ArrayUtils.ArrayAppend(ref SerializableContentPack.entityStateTypes, new EntityStates.SerializableEntityStateType(state)));
+                    RevLog.Message($"Loading Finished.");
                 }
             };
 

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: RevenantBodyFireLaser
+  m_Name: RevenantBodyFireRockets
   m_EditorClassIdentifier: 
-  skillName: FireLaser
-  skillNameToken: REV_REVENANT_PRIMARY_LASER_NAME
-  skillDescriptionToken: REV_REVENANT_PRIMARY_LASER_DESC
+  skillName: FireRockets
+  skillNameToken: REV_REVENANT_PRIMARY_MISSILE_NAME
+  skillDescriptionToken: REV_REVENANT_PRIMARY_MISSILE_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: RocketLauncher
   activationState:
-    _typeName: EntityStates.Revenant.Weapon.FireLaser, Revenant, Version=0.0.0.0,
+    _typeName: EntityStates.Revenant.Weapon.FireRockets, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 0
   baseRechargeInterval: 0
@@ -36,5 +36,5 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 1
   mustKeyPress: 0
-  stepCount: 2
+  stepCount: 3
   stepGraceDuration: 0.5

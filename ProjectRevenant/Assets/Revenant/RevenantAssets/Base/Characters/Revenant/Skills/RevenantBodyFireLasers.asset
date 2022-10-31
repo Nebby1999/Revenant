@@ -10,26 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: RevenantBodyFireMissile
+  m_Name: RevenantBodyFireLasers
   m_EditorClassIdentifier: 
-  skillName: FireMissile
-  skillNameToken: REV_REVENANT_PRIMARY_MISSILE_NAME
-  skillDescriptionToken: REV_REVENANT_PRIMARY_MISSILE_DESC
+  skillName: FireLasers
+  skillNameToken: REV_REVENANT_PRIMARY_LASER_NAME
+  skillDescriptionToken: REV_REVENANT_PRIMARY_LASER_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: RocketLauncher
   activationState:
-    _typeName: 
-  interruptPriority: 1
+    _typeName: EntityStates.Revenant.Weapon.FireLasers, Revenant, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  interruptPriority: 0
   baseRechargeInterval: 0
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1
   stockToConsume: 1
-  resetCooldownTimerOnUse: 0
+  resetCooldownTimerOnUse: 1
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
-  beginSkillCooldownOnSkillEnd: 0
+  beginSkillCooldownOnSkillEnd: 1
   cancelSprintingOnActivation: 1
   forceSprintDuringState: 0
   canceledFromSprinting: 0

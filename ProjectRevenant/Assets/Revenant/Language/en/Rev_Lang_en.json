@@ -2,18 +2,18 @@
 	"strings": {
 		"REV_REVENANT_BODY_NAME": "Revenant",
 		"REV_REVENANT_BODY_SUBTITLE": "Undead Symbiosis",
-		"REV_REVENANT_PASSIVE_NAME": "Undeath",
-		"REV_REVENANT_PASSIVE_DESC": "Spoopy",
+		"REV_REVENANT_PASSIVE_NAME": "Red Plane Symbiosis",
+		"REV_REVENANT_PASSIVE_DESC": "The Revenant has the innate ability to fly for a short time",
 
 		"REV_REVENANT_DESCRIPTION": "Spooky Boi",
 		"REV_REVENANT_OUTRO_FLAVOR": "...And so it left, scream eternal.",
 		"REV_REVENANT_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "...And so it vanished, It's agitation smothered.",
 
 		"REV_REVENANT_PRIMARY_LASER_NAME": "Planar Laser",
-		"REV_REVENANT_PRIMARY_LASER_DESC": "IMMA FIRIN MAH LAZOR",
+		"REV_REVENANT_PRIMARY_LASER_DESC": "Fire an instant Laser that deals 100% damage, every 3rd shot fire Two Lasers instead.",
 
 		"REV_REVENANT_PRIMARY_MISSILE_NAME": "Planar Missile",
-		"REV_REVENANT_PRIMARY_MISSILE_DESC": "Haha funni homing missile",
+		"REV_REVENANT_PRIMARY_MISSILE_DESC": "Fire a missile that deals 50% damage on impact that detonates after a short while for 150% damage, every 3rd shot fire Two homing missiles",
 
 		"REV_REVENANT_PRIMARY_PUNCH_NAME": "Blood Claw",
 		"REV_REVENANT_PRIMARY_PUNCH_DESC": "Woosh Pow",

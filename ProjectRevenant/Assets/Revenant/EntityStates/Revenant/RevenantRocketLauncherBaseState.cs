@@ -90,5 +90,6 @@ namespace EntityStates.Revenant.Weapon
                 }
             }
         }
+
     }
 }
