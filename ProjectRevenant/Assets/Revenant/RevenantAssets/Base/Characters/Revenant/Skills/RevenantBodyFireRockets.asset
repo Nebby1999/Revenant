@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RevenantBodyFireRockets
   m_EditorClassIdentifier: 
   skillName: FireRockets
-  skillNameToken: REV_REVENANT_PRIMARY_MISSILE_NAME
-  skillDescriptionToken: REV_REVENANT_PRIMARY_MISSILE_DESC
+  skillNameToken: REV_REVENANT_PRIMARY_ROCKET_NAME
+  skillDescriptionToken: REV_REVENANT_PRIMARY_ROCKET_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: RocketLauncher

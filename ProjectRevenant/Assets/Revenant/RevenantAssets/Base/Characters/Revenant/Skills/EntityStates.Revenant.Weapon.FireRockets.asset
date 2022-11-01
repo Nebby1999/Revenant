@@ -29,7 +29,7 @@ MonoBehaviour:
           type: 3}
     - fieldName: damageCoef
       fieldValue:
-        stringValue: 1
+        stringValue: 0.5
         objectValue: {fileID: 0}
     - fieldName: force
       fieldValue:

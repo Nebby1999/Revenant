@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 99
   lifetimeExpiredEffect: {fileID: 0}
-  desiredForwardSpeed: 50
+  desiredForwardSpeed: 75
   updateAfterFiring: 1
   enableVelocityOverLifetime: 0
   velocityOverLifetime:

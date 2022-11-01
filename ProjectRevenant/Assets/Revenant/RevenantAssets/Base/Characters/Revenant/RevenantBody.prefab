@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5532139723560863335}
   - component: {fileID: 8495236968603198120}
   - component: {fileID: 1781188892861136850}
+  - component: {fileID: 8275059953465993303}
   - component: {fileID: 4056058227216232372}
   - component: {fileID: 7280072325399467305}
   - component: {fileID: 3940566350423443161}
@@ -39,7 +40,7 @@ GameObject:
   - component: {fileID: 7907322594614658884}
   - component: {fileID: 6452766617878345701}
   m_Layer: 0
-  m_Name: RevenantBodyBak
+  m_Name: RevenantBody
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,6 +200,26 @@ MonoBehaviour:
   normalizeToFloor: 0
   normalSmoothdampTime: 0.1
   normalMaxAngleDelta: 90
+--- !u!114 &8275059953465993303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624800342272787527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6abc77ae0894d4990f4db9edca0354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterBody: {fileID: 8495236968603198120}
+  baseMaxFuel: 100
+  extraFuelPerExtraJump: 10
+  extraFuelPerExtraJumpStrength: 5
+  fuelRestoredPerSecond: 15
+  overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
+    type: 3}
+  overlayChildLocatorEntry: CrosshairExtras
 --- !u!114 &4056058227216232372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,11 +250,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Body
   initialStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Revenant.RevenantCharacterMain, Revenant, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   mainStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Revenant.RevenantCharacterMain, Revenant, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &3940566350423443161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
-  skillName: FireMissile
+  skillName: FireRocket
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &6621659619872148675
@@ -339,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 31827c2875607234a8463e90c2c68d26, type: 2}
-  skillName: RocketBarrage
+  skillName: Dash
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &3095365079419818666
@@ -355,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: d3bee3913a20025498449e038602f759, type: 2}
-  skillName: Flight
+  skillName: Dash
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &4940032391721600827
@@ -874,7 +895,6 @@ GameObject:
   - component: {fileID: 8658030754649330569}
   - component: {fileID: 2984610317585405497}
   - component: {fileID: 634930570224990454}
-  - component: {fileID: 2731569536252212127}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -943,19 +963,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2731569536252212127
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207320884822472287}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8253322881217592383
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +974,6 @@ GameObject:
   - component: {fileID: 6034339253702092746}
   - component: {fileID: 5234918375653393833}
   - component: {fileID: 4710550553834469011}
-  - component: {fileID: 1214093064101600650}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1036,19 +1042,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1214093064101600650
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8253322881217592383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8300495014266693241
 GameObject:
   m_ObjectHideFlags: 0

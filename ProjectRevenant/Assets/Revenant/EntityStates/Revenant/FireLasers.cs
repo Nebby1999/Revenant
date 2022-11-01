@@ -74,6 +74,7 @@ namespace EntityStates.Revenant.Weapon
             bulletAttack.tracerEffectPrefab = tracerEffectPrefab;
             bulletAttack.muzzleName = muzzle;
             bulletAttack.hitEffectPrefab = hitEffectPrefab;
+            bulletAttack.falloffModel = BulletAttack.FalloffModel.DefaultBullet;
             bulletAttack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
             bulletAttack.radius = 0.1f;
             bulletAttack.smartCollision = true;

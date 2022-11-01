@@ -78,5 +78,10 @@ namespace EntityStates.Revenant.Weapon
             pInfo.damageColorIndex = DamageColorIndex.Default;
             return pInfo;
         }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
+        }
     }
 }

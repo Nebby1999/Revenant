@@ -23,6 +23,7 @@ MonoBehaviour:
   skillDefs:
   - {fileID: 11400000, guid: c39c156d917c2894c92599eb5bb10d1d, type: 2}
   - {fileID: 11400000, guid: 9e1774ee6efda434a85f1fac214549f5, type: 2}
+  - {fileID: 11400000, guid: d15ee88bd7c694044b7fd15e3f434d2d, type: 2}
   skillFamilies:
   - {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
   - {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}

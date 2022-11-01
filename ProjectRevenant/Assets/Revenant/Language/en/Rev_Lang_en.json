@@ -12,8 +12,8 @@
 		"REV_REVENANT_PRIMARY_LASER_NAME": "Planar Laser",
 		"REV_REVENANT_PRIMARY_LASER_DESC": "Fire an instant Laser that deals 100% damage, every 3rd shot fire Two Lasers instead.",
 
-		"REV_REVENANT_PRIMARY_MISSILE_NAME": "Planar Missile",
-		"REV_REVENANT_PRIMARY_MISSILE_DESC": "Fire a missile that deals 50% damage on impact that detonates after a short while for 150% damage, every 3rd shot fire Two homing missiles",
+		"REV_REVENANT_PRIMARY_ROCKET_NAME": "Planar Rocket",
+		"REV_REVENANT_PRIMARY_ROCKET_DESC": "Fire a rocket that deals 50% damage on impact that detonates after a short while for 150% damage, every 3rd shot fire Two homing rockets",
 
 		"REV_REVENANT_PRIMARY_PUNCH_NAME": "Blood Claw",
 		"REV_REVENANT_PRIMARY_PUNCH_DESC": "Woosh Pow",

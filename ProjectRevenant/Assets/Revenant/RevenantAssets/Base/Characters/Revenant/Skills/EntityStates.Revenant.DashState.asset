@@ -10,34 +10,30 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.Weapon.FireLasers
+  m_Name: EntityStates.Revenant.DashState
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.Revenant.Weapon.FireLasers, Revenant, Version=0.0.0.0,
+    assemblyQualifiedName: EntityStates.Revenant.DashState, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
-    - fieldName: damageCoef
+    - fieldName: duration
       fieldValue:
-        stringValue: 1
+        stringValue: 0.4
         objectValue: {fileID: 0}
-    - fieldName: force
+    - fieldName: dodgeFOV
       fieldValue:
-        stringValue: 6
+        stringValue: 65
         objectValue: {fileID: 0}
-    - fieldName: leftMuzzle
+    - fieldName: baseDashSpeed
       fieldValue:
-        stringValue: MuzzleL
+        stringValue: 10
         objectValue: {fileID: 0}
-    - fieldName: rightMuzzle
+    - fieldName: maxDashSpeedCoefficient
       fieldValue:
-        stringValue: MuzzleR
+        stringValue: 1.5
         objectValue: {fileID: 0}
-    - fieldName: baseDuration
+    - fieldName: onAirDashSpeedCoefficient
       fieldValue:
-        stringValue: 1
-        objectValue: {fileID: 0}
-    - fieldName: muzzleEffectPrefab
-      fieldValue:
-        stringValue: 
+        stringValue: 0.5
         objectValue: {fileID: 0}
