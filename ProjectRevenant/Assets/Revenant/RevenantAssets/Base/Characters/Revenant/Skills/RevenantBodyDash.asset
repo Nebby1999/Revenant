@@ -15,7 +15,8 @@ MonoBehaviour:
   skillName: Dash
   skillNameToken: REV_REVENANT_UTIL_DASH_NAME
   skillDescriptionToken: REV_REVENANT_UTIL_DASH_DESC
-  keywordTokens: []
+  keywordTokens:
+  - REV_KEYWORD_PLANARCONSUMING
   icon: {fileID: 0}
   activationStateMachineName: Body
   activationState:

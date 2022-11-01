@@ -6,15 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Moonstorm;
 
-namespace EntityStates.Revenant.Weapon
+namespace EntityStates.Revenant.RocketLauncher
 {
     public class FireRockets : RevenantRocketLauncherBaseState
     {
+        private const string tkn = "REV_REVENANT_PRIMARY_ROCKET_DESC";
+
         public static GameObject rocketPrefab;
         public static GameObject guidedRocketPrefab;
+        [TokenModifier(tkn, StatTypes.Percentage, 0)]
         public static float damageCoef;
         public static float force;
+
+        //for use in the token modifier, not used in state
+        [TokenModifier(tkn, StatTypes.Percentage, 1)]
+        public static float explosionDamageCoef = damageCoef * 3;
 
         private MuzzleTransforms muzzleTransforms;
         private float damage;

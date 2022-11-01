@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moonstorm;
 using UnityEngine;
 using FL = EntityStates.GolemMonster.FireLaser;
 
-namespace EntityStates.Revenant.Weapon
+namespace EntityStates.Revenant.RocketLauncher
 {
     public class FireLasers : RevenantRocketLauncherBaseState
     {
+        private const string tkn = "REV_REVENANT_PRIMARY_LASER_DESC";
+
         [HideInInspector]
         public static GameObject hitEffectPrefab;
         [HideInInspector]
         public static GameObject tracerEffectPrefab;
+        public static float laserRadius;
+        [TokenModifier(tkn, StatTypes.Percentage)]
         public static float damageCoef;
         public static float force;
 
@@ -68,7 +73,7 @@ namespace EntityStates.Revenant.Weapon
             bulletAttack.origin = aimRay.origin;
             bulletAttack.aimVector = aimRay.direction;
             bulletAttack.minSpread = 0f;
-            bulletAttack.maxSpread = base.characterBody.spreadBloomAngle;
+            bulletAttack.maxSpread = 0;
             bulletAttack.damage = damageCoef * damageStat;
             bulletAttack.force = force;
             bulletAttack.tracerEffectPrefab = tracerEffectPrefab;
@@ -76,7 +81,7 @@ namespace EntityStates.Revenant.Weapon
             bulletAttack.hitEffectPrefab = hitEffectPrefab;
             bulletAttack.falloffModel = BulletAttack.FalloffModel.DefaultBullet;
             bulletAttack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
-            bulletAttack.radius = 0.1f;
+            bulletAttack.radius = laserRadius;
             bulletAttack.smartCollision = true;
             return bulletAttack;
         }

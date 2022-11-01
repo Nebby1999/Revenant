@@ -214,9 +214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterBody: {fileID: 8495236968603198120}
   baseMaxFuel: 100
-  extraFuelPerExtraJump: 10
-  extraFuelPerExtraJumpStrength: 5
-  fuelRestoredPerSecond: 15
+  extraFuelPerExtraJump: 25
+  extraFuelPerExtraJumpStrength: 1
+  fuelRestoredPerSecond: 20
   overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
     type: 3}
   overlayChildLocatorEntry: CrosshairExtras
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}
-  skillName: Scream
+  skillName: Punch
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &7110562614778764017
@@ -709,6 +709,36 @@ Transform:
   m_Father: {fileID: 7345874994727293366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!1 &4421776160208422425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5219361661997390592}
+  m_Layer: 0
+  m_Name: PunchEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5219361661997390592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421776160208422425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5157115645456379268}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4523135313833418438
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +800,7 @@ Transform:
   m_Children:
   - {fileID: 8658030754649330569}
   - {fileID: 6034339253702092746}
+  - {fileID: 5219361661997390592}
   m_Father: {fileID: 1155860272108466216}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -820,6 +851,49 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6017930874791469730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6346802966663409908}
+  - component: {fileID: 7188616767247096157}
+  m_Layer: 0
+  m_Name: PunchHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6346802966663409908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017930874791469730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1155860272108466216}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7188616767247096157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017930874791469730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1783796254, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6559652732835241178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1160,7 @@ GameObject:
   - component: {fileID: 4479169428333527168}
   - component: {fileID: 8705964407781508631}
   - component: {fileID: 5114544595564888937}
+  - component: {fileID: 5399852297910524317}
   - component: {fileID: 6397785433741994116}
   - component: {fileID: 7903244956066783485}
   - component: {fileID: 65244737034111790}
@@ -1112,6 +1187,7 @@ Transform:
   m_Children:
   - {fileID: 5157115645456379268}
   - {fileID: 6248657981718779076}
+  - {fileID: 6346802966663409908}
   m_Father: {fileID: 7989365846992970697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -1173,6 +1249,8 @@ MonoBehaviour:
     transform: {fileID: 8658030754649330569}
   - name: MuzzleL
     transform: {fileID: 6034339253702092746}
+  - name: PunchSwing
+    transform: {fileID: 5219361661997390592}
 --- !u!114 &5114544595564888937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1267,21 @@ MonoBehaviour:
   - {fileID: 8385928318614145010}
   mainHurtBox: {fileID: 8385928318614145010}
   bullseyeCount: 1
+--- !u!114 &5399852297910524317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335786915960417707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1294804675, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupName: Punch
+  hitBoxes:
+  - {fileID: 7188616767247096157}
 --- !u!114 &6397785433741994116
 MonoBehaviour:
   m_ObjectHideFlags: 0

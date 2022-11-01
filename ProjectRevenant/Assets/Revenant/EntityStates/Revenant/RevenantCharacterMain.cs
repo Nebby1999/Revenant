@@ -11,7 +11,6 @@ namespace EntityStates.Revenant
         public static float jetpackVelocity;
         public static float fuelConsumedPerSecond;
         
-
         public RevenantJetpackController JetpackController { get; private set; }
         public bool HasFuel => JetpackController.CurrentFuel > 0;
         public override void OnEnter()

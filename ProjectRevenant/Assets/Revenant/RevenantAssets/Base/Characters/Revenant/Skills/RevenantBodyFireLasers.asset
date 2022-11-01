@@ -19,7 +19,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   activationStateMachineName: RocketLauncher
   activationState:
-    _typeName: EntityStates.Revenant.Weapon.FireLasers, Revenant, Version=0.0.0.0,
+    _typeName: EntityStates.Revenant.RocketLauncher.FireLasers, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 0
   baseRechargeInterval: 0

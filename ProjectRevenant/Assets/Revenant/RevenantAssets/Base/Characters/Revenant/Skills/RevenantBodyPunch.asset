@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: RevenantBodyScream
+  m_Name: RevenantBodyPunch
   m_EditorClassIdentifier: 
-  skillName: Scream
-  skillNameToken: REV_REVENANT_SECONDARY_SCREAM_NAME
-  skillDescriptionToken: REV_REVENANT_SECONDARY_SCREAM_DESC
+  skillName: Punch
+  skillNameToken: REV_REVENANT_SECONDARY_PUNCH_NAME
+  skillDescriptionToken: REV_REVENANT_SECONDARY_PUNCH_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon
   activationState:
-    _typeName: 
+    _typeName: EntityStates.Revenant.Weapon.PunchState, Revenant, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
-  baseRechargeInterval: 1
+  baseRechargeInterval: 2
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

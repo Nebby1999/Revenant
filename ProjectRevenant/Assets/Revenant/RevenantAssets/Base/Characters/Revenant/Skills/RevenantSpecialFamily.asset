@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: RevenantSpecialFamily
   m_EditorClassIdentifier: 
   variants:
-  - skillDef: {fileID: 11400000, guid: d15ee88bd7c694044b7fd15e3f434d2d, type: 2}
+  - skillDef: {fileID: 11400000, guid: 6c52903f15b444147b8d23161c16fd10, type: 2}
+    unlockableName: 
+    unlockableDef: {fileID: 0}
+  - skillDef: {fileID: 11400000, guid: 5e2508e140bcb094e910b450ad088e87, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}
   defaultVariantIndex: 0

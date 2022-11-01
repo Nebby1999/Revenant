@@ -1,11 +1,12 @@
-﻿using RoR2;
+﻿using Revenant.Components;
+using RoR2;
 using RoR2.Skills;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FL = EntityStates.GolemMonster.FireLaser;
 
-namespace EntityStates.Revenant.Weapon
+namespace EntityStates.Revenant.RocketLauncher
 {
     public abstract class RevenantRocketLauncherBaseState : BaseSkillState, SteppedSkillDef.IStepSetter
     {
@@ -34,10 +35,13 @@ namespace EntityStates.Revenant.Weapon
         protected float duration;
         protected Ray aimRay;
 
+        public RevenantJetpackController JetpackController { get; private set; }
+        public bool HasFuel => JetpackController.CurrentFuel > 0;
         public void SetStep(int i) => CurrentMuzzle = (Muzzle)i;
         public override void OnEnter()
         {
             base.OnEnter();
+            JetpackController = GetComponent<RevenantJetpackController>();
             duration = baseDuration / attackSpeedStat;
             aimRay = GetAimRay();
             StartAimMode(aimRay, 2f);

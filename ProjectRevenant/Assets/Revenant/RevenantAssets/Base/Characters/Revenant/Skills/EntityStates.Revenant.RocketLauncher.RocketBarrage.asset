@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.Weapon.FireRockets
+  m_Name: EntityStates.Revenant.RocketLauncher.RocketBarrage
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.Revenant.Weapon.FireRockets, Revenant, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    assemblyQualifiedName: EntityStates.Revenant.RocketLauncher.RocketBarrage, Revenant,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
     - fieldName: rocketPrefab
@@ -27,6 +27,18 @@ MonoBehaviour:
         stringValue: 
         objectValue: {fileID: 7950396951582464409, guid: 101357b03e6ebaf4eb943d6444adbfb7,
           type: 3}
+    - fieldName: guidedChance
+      fieldValue:
+        stringValue: 50
+        objectValue: {fileID: 0}
+    - fieldName: rocketAmount
+      fieldValue:
+        stringValue: 20
+        objectValue: {fileID: 0}
+    - fieldName: firingDuration
+      fieldValue:
+        stringValue: 1
+        objectValue: {fileID: 0}
     - fieldName: damageCoef
       fieldValue:
         stringValue: 0.5
@@ -34,6 +46,10 @@ MonoBehaviour:
     - fieldName: force
       fieldValue:
         stringValue: 6
+        objectValue: {fileID: 0}
+    - fieldName: maxDuration
+      fieldValue:
+        stringValue: 5
         objectValue: {fileID: 0}
     - fieldName: leftMuzzle
       fieldValue:
@@ -45,7 +61,7 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: baseDuration
       fieldValue:
-        stringValue: 1
+        stringValue: 0
         objectValue: {fileID: 0}
     - fieldName: muzzleEffectPrefab
       fieldValue:

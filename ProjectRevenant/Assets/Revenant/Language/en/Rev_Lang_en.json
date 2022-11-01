@@ -3,28 +3,30 @@
 		"REV_REVENANT_BODY_NAME": "Revenant",
 		"REV_REVENANT_BODY_SUBTITLE": "Undead Symbiosis",
 		"REV_REVENANT_PASSIVE_NAME": "Red Plane Symbiosis",
-		"REV_REVENANT_PASSIVE_DESC": "The Revenant has the innate ability to fly for a short time",
+		"REV_REVENANT_PASSIVE_DESC": "The Revenant has the innate ability to fly for a short time, Any increase to jump strength or jump count increases the flight duration instead.",
 
-		"REV_REVENANT_DESCRIPTION": "Spooky Boi",
+		"REV_KEYWORD_PLANARCONSUMING" :  "Consumes Planar Energy",
+
+		"REV_REVENANT_DESCRIPTION": "The Revenant is an undead Lemurian kept alive by the power of it's Imp parasite. While fragile, the Revenant can deal deadly damage and has high mobility thanks to it's powers taken from the Red Plane.\n\n<!> The Revenant has a limited amount of Planar Energy, Planar energy gets consumed by certain actions and restores over time. Items and Status Effects that increase the amount of jumps or Jump Strength increases your planar Energy.\n\n<!> Your dash can be used to close the gap between foes or take distance from them, Keep in mind your planar energy, as this move consumes it.\n\n<!> Planar Rockets deal a good amount of damage and are perfect for Mob Control, while Planar Laser allows you to strike foes from great distances.\n\n<!> Rocket Barrage is an extremely powerful but dangerous ability as it locks you in place.",
 		"REV_REVENANT_OUTRO_FLAVOR": "...And so it left, scream eternal.",
 		"REV_REVENANT_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "...And so it vanished, It's agitation smothered.",
 
 		"REV_REVENANT_PRIMARY_LASER_NAME": "Planar Laser",
-		"REV_REVENANT_PRIMARY_LASER_DESC": "Fire an instant Laser that deals 100% damage, every 3rd shot fire Two Lasers instead.",
+		"REV_REVENANT_PRIMARY_LASER_DESC": "Fire an instant Laser that deals {0}% damage, every 3rd shot fires two Lasers instead.",
 
 		"REV_REVENANT_PRIMARY_ROCKET_NAME": "Planar Rocket",
-		"REV_REVENANT_PRIMARY_ROCKET_DESC": "Fire a rocket that deals 50% damage on impact that detonates after a short while for 150% damage, every 3rd shot fire Two homing rockets",
+		"REV_REVENANT_PRIMARY_ROCKET_DESC": "Fire a rocket that deals {0}% damage on impact that detonates after a short while for {1}% damage, every 3rd shot fires two homing rockets instead.",
 
-		"REV_REVENANT_PRIMARY_PUNCH_NAME": "Blood Claw",
-		"REV_REVENANT_PRIMARY_PUNCH_DESC": "Woosh Pow",
+		"REV_REVENANT_SECONDARY_PUNCH_NAME": "Lemurian Claws",
+		"REV_REVENANT_SECONDARY_PUNCH_DESC": "Swipe at your oponents, dealing {0}% damage",
 
-		"REV_REVENANT_SECONDARY_SCREAM_NAME": "AGITATION",
-		"REV_REVENANT_SECONDARY_SCREAM_DESC": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!",
+		"REV_REVENANT_UTIL_DASH_NAME": "Planar Dash",
+		"REV_REVENANT_UTIL_DASH_DESC":  "Planar Consuming, Spend {0} Planar Energy and dash in the direction you're moving.",
 
-		"REV_REVENANT_UTIL_ROCKETBARRAGE_NAME": "Planar Missile Bombardment",
-		"REV_REVENANT_UTIL_ROCKETBARRAGE_DESC": "Get fucked boi",
+		"REV_REVENANT_SPECIAL_ROCKETBARRAGE_NAME": "Planar Missile Barrage",
+		"REV_REVENANT_SPECIAL_ROCKETBARRAGE_DESC": "Leap into the air. Taerget an area where {0} rockets will fire. The rockets deal {1}% damage on impact and detonates for {2}% damage. Rockets have a {3}% chance to be homing.",
 
-		"REV_REVENANT_SPECIAL_OVERLOAD_NAME": "Overload",
-		"REV_REVENANT_SPECIAL_OVERLOAD_DESC":  "AAAGHA AAAHAHAHAHHAAAA AAAARGGHAAAAAAAAAHHHHH!!!!"
+		"REV_REVENANT_SPECIAL_LASERBARRAGE_NAME": "Planar Laser Barrage",
+		"REV_REVENANT_SPECIAL_LASERBARRAGE_DESC":  "Leap into the air. Target an area where {0} Lasers will fire. The lasers deal {1}% damage"
 	}
 }

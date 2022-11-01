@@ -10,20 +10,28 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.Weapon.FireLasers
+  m_Name: EntityStates.Revenant.RocketLauncher.BeginRocketBarrage
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.Revenant.Weapon.FireLasers, Revenant, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    assemblyQualifiedName: EntityStates.Revenant.RocketLauncher.BeginRocketBarrage,
+      Revenant, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
-    - fieldName: damageCoef
+    - fieldName: basePrepDuration
       fieldValue:
-        stringValue: 1
+        stringValue: 0.25
         objectValue: {fileID: 0}
-    - fieldName: force
+    - fieldName: dashDuration
       fieldValue:
-        stringValue: 6
+        stringValue: 0.3
+        objectValue: {fileID: 0}
+    - fieldName: jumpCoefficient
+      fieldValue:
+        stringValue: 3
+        objectValue: {fileID: 0}
+    - fieldName: dashVector
+      fieldValue:
+        stringValue: 0 1 0
         objectValue: {fileID: 0}
     - fieldName: leftMuzzle
       fieldValue:
@@ -35,7 +43,7 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: baseDuration
       fieldValue:
-        stringValue: 1
+        stringValue: 0
         objectValue: {fileID: 0}
     - fieldName: muzzleEffectPrefab
       fieldValue:
