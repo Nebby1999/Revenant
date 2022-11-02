@@ -98,3 +98,7 @@ MonoBehaviour:
       fieldValue:
         stringValue: 0
         objectValue: {fileID: 0}
+    - fieldName: TokenModifier_DmgCoef
+      fieldValue:
+        stringValue: 0
+        objectValue: {fileID: 0}

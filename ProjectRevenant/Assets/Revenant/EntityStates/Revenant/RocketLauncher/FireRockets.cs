@@ -16,13 +16,10 @@ namespace EntityStates.Revenant.RocketLauncher
 
         public static GameObject rocketPrefab;
         public static GameObject guidedRocketPrefab;
-        [TokenModifier(tkn, StatTypes.Percentage, 0)]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "300")]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 0, "100")]
         public static float damageCoef;
         public static float force;
-
-        //for use in the token modifier, not used in state
-        [TokenModifier(tkn, StatTypes.Percentage, 1)]
-        public static float explosionDamageCoef = damageCoef * 3;
 
         private MuzzleTransforms muzzleTransforms;
         private float damage;

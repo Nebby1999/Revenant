@@ -19,7 +19,7 @@ namespace EntityStates.Revenant.RocketLauncher
         [HideInInspector]
         public static GameObject tracerEffectPrefab;
         public static float laserRadius;
-        [TokenModifier(tkn, StatTypes.Percentage)]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 0, "100")]
         public static float damageCoef;
         public static float force;
 

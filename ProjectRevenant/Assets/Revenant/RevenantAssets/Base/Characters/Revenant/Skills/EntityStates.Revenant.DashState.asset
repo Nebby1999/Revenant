@@ -37,7 +37,3 @@ MonoBehaviour:
       fieldValue:
         stringValue: 30 0 30
         objectValue: {fileID: 0}
-    - fieldName: skillDef
-      fieldValue:
-        stringValue: 
-        objectValue: {fileID: 11400000, guid: d15ee88bd7c694044b7fd15e3f434d2d, type: 2}

@@ -24,7 +24,7 @@ namespace EntityStates.Revenant.RocketLauncher
         public static float firingDuration;
         public static float minSpread;
         public static float maxSpread;
-        [TokenModifier(tkn, StatTypes.Percentage, 1)]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "100")]
         public static float damageCoef;
         public static float force;
         public static float laserRadius;

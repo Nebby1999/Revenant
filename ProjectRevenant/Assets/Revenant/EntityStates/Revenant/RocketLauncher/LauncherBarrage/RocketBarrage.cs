@@ -21,10 +21,9 @@ namespace EntityStates.Revenant.RocketLauncher
         [TokenModifier(tkn, StatTypes.Default, 0)]
         public static int rocketAmount;
         public static float firingDuration;
-        [TokenModifier(tkn, StatTypes.Default, 1)]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 2, "300")]
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "100")]
         public static float damageCoef;
-        [TokenModifier(tkn, StatTypes.Default, 2)]
-        [HideInInspector] public static float explosionDamageCoef = damageCoef * 3;
         public static float force;
         
         private GameObject areaIndicatorInstance;

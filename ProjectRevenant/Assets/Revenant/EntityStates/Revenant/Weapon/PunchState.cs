@@ -16,11 +16,10 @@ namespace EntityStates.Revenant.Weapon
 		private float durationBeforeInterruptable;
 
 		//For use in the token modifier, not used in the state
-        [TokenModifier(tkn, StatTypes.Percentage, 0)]
-		[HideInInspector] public static float dmgCoef;
+        [TokenModifier(tkn, StatTypes.MultiplyByN, 0, "100")]
+		public static float TokenModifier_DmgCoef => new PunchState().damageCoefficient;
         public override void OnEnter()
         {
-			dmgCoef = damageCoefficient;
             base.OnEnter();
 			durationBeforeInterruptable = baseDurationBeforeInterruptable / attackSpeedStat;
         }

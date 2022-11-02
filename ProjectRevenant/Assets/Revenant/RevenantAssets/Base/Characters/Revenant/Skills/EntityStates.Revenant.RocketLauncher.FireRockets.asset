@@ -51,7 +51,3 @@ MonoBehaviour:
       fieldValue:
         stringValue: 
         objectValue: {fileID: 0}
-    - fieldName: explosionDamageCoef
-      fieldValue:
-        stringValue: 0
-        objectValue: {fileID: 0}

@@ -19,10 +19,8 @@ namespace EntityStates.Revenant
         public static Vector3 onAirMaxSpeed;
         public static float onAirDashSpeedCoefficient;
 
-        //For use in token modifier, not used in state
-        public static RevenantFuelSkillDef skillDef;
         [TokenModifier(tkn, StatTypes.Default, 0)]
-        [HideInInspector] public static float fuelConsumed = skillDef.fuelCost;
+        public static float TokenModifier_FuelConsumed => RevenantAssets.LoadAsset<RevenantFuelSkillDef>("RevenantBodyDash").fuelCost;
 
         private Vector3 forwardDirection;
         private float dashSpeed;
