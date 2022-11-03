@@ -20,7 +20,7 @@ namespace EntityStates.Revenant
         public static float onAirDashSpeedCoefficient;
 
         [TokenModifier(tkn, StatTypes.Default, 0)]
-        public static float TokenModifier_FuelConsumed => RevenantAssets.LoadAsset<RevenantFuelSkillDef>("RevenantBodyDash").fuelCost;
+        public static float TokenModifier_FuelConsumed => RevenantAssets.LoadAsset<RevenantFuelSkillDef>("RevenantBodyDash").baseFuelCost;
 
         private Vector3 forwardDirection;
         private float dashSpeed;

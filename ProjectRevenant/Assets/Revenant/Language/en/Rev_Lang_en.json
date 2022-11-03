@@ -5,7 +5,8 @@
 		"REV_REVENANT_PASSIVE_NAME": "Red Plane Symbiosis",
 		"REV_REVENANT_PASSIVE_DESC": "The Revenant has the innate ability to fly for a short time, Any increase to jump strength or jump count increases the flight duration instead.",
 
-		"REV_KEYWORD_PLANARCONSUMING" :  "Consumes Planar Energy",
+		"REV_KEYWORD_PLANARCONSUMING": "Skill has no Cooldown and cant stack, but consumes Planar Energy on Use",
+		"REV_REVENANT_PLANARCONSUMPTIONAMOUNT" :  "Effective Consumption thanks to Stack and Cooldowns is {0}.",
 
 		"REV_REVENANT_DESCRIPTION": "The Revenant is an undead Lemurian kept alive by the power of it's Imp parasite. While fragile, the Revenant can deal deadly damage and has high mobility thanks to it's powers taken from the Red Plane.\n\n<!> The Revenant has a limited amount of Planar Energy, Planar energy gets consumed by certain actions and restores over time. Items and Status Effects that increase the amount of jumps or Jump Strength increases your planar Energy.\n\n<!> Your dash can be used to close the gap between foes or take distance from them, Keep in mind your planar energy, as this move consumes it.\n\n<!> Planar Rockets deal a good amount of damage and are perfect for Mob Control, while Planar Laser allows you to strike foes from great distances.\n\n<!> Rocket Barrage is an extremely powerful but dangerous ability as it locks you in place.",
 		"REV_REVENANT_OUTRO_FLAVOR": "...And so it left, scream eternal.",

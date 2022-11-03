@@ -12,7 +12,7 @@ using TMPro;
 
 namespace Revenant.Components
 {
-    public class RevenantJetpackController : NetworkBehaviour, IStatItemBehavior
+    public class RevenantController : NetworkBehaviour, IStatItemBehavior
     {
         [Header("Cached Components")]
         public CharacterBody characterBody;
@@ -27,7 +27,7 @@ namespace Revenant.Components
         [SerializeField] private GameObject overlayPrefab;
         public string overlayChildLocatorEntry;
 
-        public bool ConsumingFuel { get; set;  }
+        public bool RestoreFuel { get; set;  }
         public float MaxFuel { get; private set; }
         public float CurrentFuel => currentFuel;
         [SyncVar] private float currentFuel;
@@ -71,7 +71,7 @@ namespace Revenant.Components
         {
             if(NetworkServer.active)
             {
-                if(!ConsumingFuel)
+                if(RestoreFuel)
                 {
                     AddFuel(fuelRestoredPerSecond * Time.fixedDeltaTime);
                 }
@@ -83,7 +83,7 @@ namespace Revenant.Components
         {
             if(fuelText)
             {
-                fuelText.text = String.Format("{0} / {1}", CurrentFuel, MaxFuel);
+                fuelText.text = String.Format("{0} / {1}", CurrentFuel.ToString("0.00"), MaxFuel.ToString("0.00"));
             }
         }
         public void RecalculateStatsStart()

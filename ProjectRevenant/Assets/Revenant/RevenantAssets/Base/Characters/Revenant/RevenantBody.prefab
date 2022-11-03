@@ -209,14 +209,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624800342272787527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6abc77ae0894d4990f4db9edca0354, type: 3}
+  m_Script: {fileID: 11500000, guid: 89f23a910c15f8548827d44b2001c4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterBody: {fileID: 8495236968603198120}
   baseMaxFuel: 100
   extraFuelPerExtraJump: 25
   extraFuelPerExtraJumpStrength: 1
-  fuelRestoredPerSecond: 20
+  fuelRestoredPerSecond: 30
   overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
     type: 3}
   overlayChildLocatorEntry: CrosshairExtras

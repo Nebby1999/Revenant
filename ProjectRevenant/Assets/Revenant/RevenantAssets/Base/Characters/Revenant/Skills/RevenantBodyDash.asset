@@ -37,4 +37,7 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 0
   mustKeyPress: 1
-  fuelCost: 50
+  baseFuelCost: 50
+  minFuelCost: 10
+  costReductionPerExtraStock: 0
+  costCoefficientFromCooldowns: 0

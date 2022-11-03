@@ -14,30 +14,44 @@ namespace Revenant
     [CreateAssetMenu(menuName = "RoR2/SkillDef/RevenantFuelSkillDef")]
     public class RevenantFuelSkillDef : SkillDef
     {
-        public float fuelCost;
+        public class InstanceData : BaseSkillInstanceData
+        {
+            public float BaseCost { get; }
+            public float EffectiveCost { get; internal set; }
+            public RevenantController JetpackController { get; }
 
-        private RevenantJetpackController jetpackController;
+            public InstanceData(float fuelCost, GenericSkill genericSkill)
+            {
+                BaseCost = fuelCost;
+                EffectiveCost = BaseCost;
+                JetpackController = genericSkill.GetComponent<RevenantController>();
+            }
+        }
+        [Tooltip("The base fuel cost for this skill")]
+        public float baseFuelCost;
+        [Tooltip("Minimum amount of fuel cost, the cost reduction from the fields below will never reduce the fuel cost past this limit.")]
+        public float minFuelCost;
+        [Tooltip("How much cost is reduced with extra skill stocks")]
+        public float costReductionPerExtraStock;
+        [Tooltip("How much cost is reduced or increased with cooldowns, this is applied as a multiplier to the final cost")]
+        public float costCoefficientFromCooldowns;
         public override BaseSkillInstanceData OnAssigned([NotNull] GenericSkill skillSlot)
         {
-            var baseVal = base.OnAssigned(skillSlot);
-            jetpackController = skillSlot.GetComponent<RevenantJetpackController>();
-            return baseVal;
+            var instanceData = new InstanceData(baseFuelCost, skillSlot);
+            return instanceData;
         }
-        public override void OnUnassigned([NotNull] GenericSkill skillSlot)
-        {
-            base.OnUnassigned(skillSlot);
-            jetpackController = null;
-        }
+
         public override bool CanExecute([NotNull] GenericSkill skillSlot)
         {
-            if(!jetpackController)
+            var instanceData = (InstanceData)skillSlot.skillInstanceData;
+            if(!instanceData.JetpackController)
             {
                 RevLog.Warning($"{skillSlot} has been assigned a FuelSkillDef ({skillName}) but the GenericSkill's game object lacks a jetpack controller!");
                 return base.CanExecute(skillSlot);
             }
             if(HasRequiredStockAndDelay(skillSlot) && IsReady(skillSlot) && skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState() && skillSlot.stateMachine.CanInterruptState(interruptPriority))
             {
-                return jetpackController.CurrentFuel >= fuelCost;
+                return instanceData.JetpackController.CurrentFuel >= instanceData.EffectiveCost;
             }
             return false;
         }
@@ -45,22 +59,24 @@ namespace Revenant
         public override bool IsReady([NotNull] GenericSkill skillSlot)
         {
             bool baseVal = base.IsReady(skillSlot);
-            if (!jetpackController)
+            var instanceData = (InstanceData)skillSlot.skillInstanceData;
+            if (!instanceData.JetpackController)
             {
                 RevLog.Warning($"{skillSlot} has been assigned a FuelSkillDef ({skillName}) but the GenericSkill's game object lacks a jetpack controller!");
-                return baseVal;
+                return base.CanExecute(skillSlot);
             }
-            return baseVal && jetpackController.CurrentFuel > fuelCost;
+            return baseVal && instanceData.JetpackController.CurrentFuel > instanceData.EffectiveCost;
         }
         public override void OnExecute([NotNull] GenericSkill skillSlot)
         {
             base.OnExecute(skillSlot);
-            if(!jetpackController)
+            var instanceData = (InstanceData)skillSlot.skillInstanceData;
+            if (!instanceData.JetpackController)
             {
                 RevLog.Warning($"{skillSlot} has been assigned a FuelSkillDef ({skillName}) but the GenericSkill's game object lacks a jetpack controller!");
                 return;
             }
-            jetpackController.AddFuel(-fuelCost);
+            instanceData.JetpackController.AddFuel(-instanceData.EffectiveCost);
         }
     }
 }

@@ -35,13 +35,13 @@ namespace EntityStates.Revenant.RocketLauncher
         protected float duration;
         protected Ray aimRay;
 
-        public RevenantJetpackController JetpackController { get; private set; }
+        public RevenantController JetpackController { get; private set; }
         public bool HasFuel => JetpackController.CurrentFuel > 0;
         public void SetStep(int i) => CurrentMuzzle = (Muzzle)i;
         public override void OnEnter()
         {
             base.OnEnter();
-            JetpackController = GetComponent<RevenantJetpackController>();
+            JetpackController = GetComponent<RevenantController>();
             duration = baseDuration / attackSpeedStat;
             aimRay = GetAimRay();
             StartAimMode(aimRay, 2f);
