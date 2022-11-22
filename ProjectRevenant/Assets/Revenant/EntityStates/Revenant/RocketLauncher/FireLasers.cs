@@ -59,8 +59,13 @@ namespace EntityStates.Revenant.RocketLauncher
                         CreateBulletAttack(muzzleTransforms.rightMuzzleChildLocatorName).Fire();
                         break;
                     case Muzzle.Both:
-                        CreateBulletAttack(muzzleTransforms.leftMuzzleChildLocatorName).Fire();
-                        CreateBulletAttack(muzzleTransforms.rightMuzzleChildLocatorName).Fire();
+                        var ba = CreateBulletAttack(muzzleTransforms.leftMuzzleChildLocatorName);
+                        R2API.DamageAPI.AddModdedDamageType(ba, RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
+                        ba.Fire();
+
+                        ba = CreateBulletAttack(muzzleTransforms.rightMuzzleChildLocatorName);
+                        R2API.DamageAPI.AddModdedDamageType(ba, RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
+                        ba.Fire();
                         break;
                 }
             }

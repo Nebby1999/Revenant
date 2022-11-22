@@ -8,7 +8,7 @@ using Moonstorm.Loaders;
 using R2API.ScriptableObjects;
 using RoR2;
 
-namespace Revenant
+namespace RevenantMod
 {
     public class RevenantContent : ContentLoader<RevenantContent>
     {
@@ -16,6 +16,12 @@ namespace Revenant
         {
             public static SurvivorDef Revenant;
         }
+
+        public static class BuffDefs
+        {
+            public static BuffDef bdAntiCoagulant;
+        }
+
         public override string identifier => RevenantMain.GUID;
         public override R2APISerializableContentPack SerializableContentPack { get; protected set; } = RevenantAssets.LoadAsset<R2APISerializableContentPack>("RevenantContentPack");
         public override Action[] LoadDispatchers { get; protected set; }
@@ -30,11 +36,19 @@ namespace Revenant
                 () =>
                 {
                     RevLog.Message($"Loading Started");
-                    new Modules.CharacterModule().Initialize();
+                    new Modules.Characters().Initialize();
                 },
                 () =>
                 {
-                    //new Modules.ProjectileModule().Initialize();
+                    new Modules.Buffs().Initialize();
+                },
+                () =>
+                {
+                    new Modules.DamageTypes().Initialize();
+                },
+                () =>
+                {
+                    new Modules.Projectiles().Initialize();
                 },
                 () =>
                 {
@@ -53,6 +67,10 @@ namespace Revenant
                 () =>
                 {
                     PopulateTypeFields(typeof(Survivors), ContentPack.survivorDefs);
+                },
+                () =>
+                {
+                    PopulateTypeFields(typeof(BuffDefs), ContentPack.buffDefs);
                 }
             };
         }

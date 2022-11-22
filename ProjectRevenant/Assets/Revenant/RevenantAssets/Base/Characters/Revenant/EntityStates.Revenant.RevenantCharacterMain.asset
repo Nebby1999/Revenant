@@ -17,11 +17,15 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
-    - fieldName: jetpackVelocity
-      fieldValue:
-        stringValue: 40
-        objectValue: {fileID: 0}
     - fieldName: fuelConsumedPerSecond
       fieldValue:
         stringValue: 30
+        objectValue: {fileID: 0}
+    - fieldName: baseJetpackUpwardThrust
+      fieldValue:
+        stringValue: 40
+        objectValue: {fileID: 0}
+    - fieldName: fallingVelocityBoostCoefficient
+      fieldValue:
+        stringValue: 1.5
         objectValue: {fileID: 0}

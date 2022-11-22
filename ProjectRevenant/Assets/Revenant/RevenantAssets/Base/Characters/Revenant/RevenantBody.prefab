@@ -216,10 +216,13 @@ MonoBehaviour:
   baseMaxFuel: 100
   extraFuelPerExtraJump: 25
   extraFuelPerExtraJumpStrength: 1
-  fuelRestoredPerSecond: 30
+  fuelRestoredPerSecond: 5
   overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
     type: 3}
   overlayChildLocatorEntry: CrosshairExtras
+  antiCoagulantDuration: 3
+  fuelPerHit: 1
+  baseBleedChance: 5
 --- !u!114 &4056058227216232372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,7 +880,7 @@ Transform:
   m_GameObject: {fileID: 6017930874791469730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 1155860272108466216}
   m_RootOrder: 2

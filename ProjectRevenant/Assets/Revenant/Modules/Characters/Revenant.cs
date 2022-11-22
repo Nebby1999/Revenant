@@ -8,7 +8,7 @@ using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Revenant.Characters
+namespace RevenantMod.Characters
 {
     public class Revenant : SurvivorBase
     {

@@ -15,7 +15,7 @@ using System.Security;
 #pragma warning restore CS0618
 [module: UnverifiableCode]
 
-namespace Revenant
+namespace RevenantMod
 {
     [BepInDependency("com.TeamMoonstorm.MoonstormSharedUtils", BepInDependency.DependencyFlags.HardDependency)]
 	[BepInPlugin(GUID, MODNAME, VERSION)]

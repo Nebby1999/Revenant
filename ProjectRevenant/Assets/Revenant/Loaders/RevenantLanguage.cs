@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Moonstorm.Loaders;
 
-namespace Revenant
+namespace RevenantMod
 {
     public class RevenantLanguage : LanguageLoader<RevenantLanguage>
     {

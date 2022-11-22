@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Revenant.Components;
+using RevenantMod.Components;
 using RoR2;
 using RoR2.Skills;
 using UnityEngine;
 
-namespace Revenant
+namespace RevenantMod
 {
     [CreateAssetMenu(menuName = "RoR2/SkillDef/RevenantFuelSkillDef")]
     public class RevenantFuelSkillDef : SkillDef

@@ -8,7 +8,7 @@ using Moonstorm;
 using UnityEngine;
 using System.IO;
 
-namespace Revenant
+namespace RevenantMod
 {
     public class RevenantAssets : AssetsLoader<RevenantAssets>
     {

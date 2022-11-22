@@ -9,10 +9,11 @@ using RoR2;
 using RoR2.HudOverlay;
 using UnityEngine.Networking;
 using TMPro;
+using R2API;
 
-namespace Revenant.Components
+namespace RevenantMod.Components
 {
-    public class RevenantController : NetworkBehaviour, IStatItemBehavior
+    public class RevenantController : NetworkBehaviour, IStatItemBehavior, IOnDamageDealtServerReceiver
     {
         [Header("Cached Components")]
         public CharacterBody characterBody;
@@ -26,6 +27,13 @@ namespace Revenant.Components
         [Header("UI")]
         [SerializeField] private GameObject overlayPrefab;
         public string overlayChildLocatorEntry;
+
+        [Header("Anti Coagulant")]
+        [SerializeField] private float antiCoagulantDuration;
+        [SerializeField] private float fuelPerHit;
+
+        [Header("Other")]
+        [SerializeField] private float baseBleedChance;
 
         public bool RestoreFuel { get; set;  }
         public float MaxFuel { get; private set; }
@@ -98,6 +106,7 @@ namespace Revenant.Components
             RecalculateMaxFuel(newJumpPower, newJumpCount);
             characterBody.jumpPower = originalJumpPower;
             characterBody.maxJumpCount = originalJumpCount;
+            characterBody.bleedChance += baseBleedChance;
         }
 
         [Server]
@@ -126,6 +135,31 @@ namespace Revenant.Components
         private void OnOverlayInstanceAdded(OverlayController arg1, GameObject arg2)
         {
             fuelText = arg2.GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        public void OnDamageDealtServer(DamageReport damageReport)
+        {
+            var attackerIndex = damageReport.attackerBodyIndex;
+            var victimBody = damageReport.victimBody;
+            var damageInfo = damageReport.damageInfo;
+
+            if (attackerIndex != characterBody.bodyIndex || !victimBody)
+                return;
+
+            if (damageInfo.procCoefficient <= 0)
+                return;
+
+            if (victimBody.HasBuff(RevenantContent.BuffDefs.bdAntiCoagulant) && victimBody.healthComponent)
+            {
+                float num = fuelPerHit * damageInfo.procCoefficient * victimBody.GetBuffCount(RevenantContent.BuffDefs.bdAntiCoagulant);
+                RevLog.Info($"Restoring {num} fuel");
+                AddFuel(num);
+            }
+
+            if(DamageAPI.HasModdedDamageType(damageInfo, DamageTypes.AntiCoagulant.dtAntiCoagulant))
+            {
+                victimBody.AddTimedBuff(RevenantContent.BuffDefs.bdAntiCoagulant, antiCoagulantDuration * damageReport.damageInfo.procCoefficient);
+            }
         }
     }
 }

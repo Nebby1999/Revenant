@@ -1,4 +1,4 @@
-﻿using Revenant.Components;
+﻿using RevenantMod.Components;
 using RoR2;
 using RoR2.Skills;
 using System.Collections;

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Moonstorm;
 using R2API.ScriptableObjects;
 
-namespace Revenant.Modules
+namespace RevenantMod.Modules
 {
-    public class CharacterModule : CharacterModuleBase
+    public class Characters : CharacterModuleBase
     {
         public override R2APISerializableContentPack SerializableContentPack => RevenantContent.Instance.SerializableContentPack;
 
@@ -16,16 +16,10 @@ namespace Revenant.Modules
         {
             base.Initialize();
             RevLog.Info($"Initializing Characters.");
-            GetCharacterBases();
-        }
-
-        protected override IEnumerable<CharacterBase> GetCharacterBases()
-        {
-            foreach(var cb in base.GetCharacterBases())
+            foreach (var cb in GetCharacterBases())
             {
                 AddCharacter(cb);
             }
-            return null;
         }
     }
 }
