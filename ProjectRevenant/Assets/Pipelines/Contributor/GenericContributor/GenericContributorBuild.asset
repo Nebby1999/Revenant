@@ -33,6 +33,7 @@ MonoBehaviour:
   Manifests:
   - {fileID: 11400000, guid: 558b7accd11857e449045b790b8e2037, type: 2}
   - {fileID: 11400000, guid: 5ceb1d8ed3af40d4d806e9756b403649, type: 2}
+  StrictDictionaryReplace: 1
   Recursive: 1
   SourceRequired: 0
   EstablishDestination: 1

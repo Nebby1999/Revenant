@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RevenantBodyPunch
   m_EditorClassIdentifier: 
   skillName: Punch
-  skillNameToken: REV_REVENANT_SECONDARY_PUNCH_NAME
-  skillDescriptionToken: REV_REVENANT_SECONDARY_PUNCH_DESC
+  skillNameToken: REV_REVENANT_PRIMARY_PUNCH_NAME
+  skillDescriptionToken: REV_REVENANT_PRIMARY_PUNCH_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon
@@ -22,7 +22,7 @@ MonoBehaviour:
     _typeName: EntityStates.Revenant.Weapon.PunchState, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
-  baseRechargeInterval: 2
+  baseRechargeInterval: 0
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

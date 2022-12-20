@@ -48,10 +48,6 @@ namespace RevenantMod
                 },
                 () =>
                 {
-                    new Modules.Projectiles().Initialize();
-                },
-                () =>
-                {
                     RevLog.Info($"Loading Entity States");
                     SerializableContentPack.entityStateConfigurations = RevenantAssets.LoadAllAssetsOfType<EntityStateConfiguration>();
                     GetType().Assembly.GetTypes()

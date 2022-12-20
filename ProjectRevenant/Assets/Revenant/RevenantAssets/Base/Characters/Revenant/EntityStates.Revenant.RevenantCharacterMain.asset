@@ -29,3 +29,11 @@ MonoBehaviour:
       fieldValue:
         stringValue: 1.5
         objectValue: {fileID: 0}
+    - fieldName: timeBeforeJumpBecomesThrust
+      fieldValue:
+        stringValue: 0.25
+        objectValue: {fileID: 0}
+    - fieldName: maxJetpackUpwardThrust
+      fieldValue:
+        stringValue: 30
+        objectValue: {fileID: 0}

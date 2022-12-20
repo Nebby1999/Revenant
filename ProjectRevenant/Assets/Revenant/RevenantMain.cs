@@ -37,7 +37,6 @@ namespace RevenantMod
 			new RevenantLanguage().Init();
 			new RevenantContent().Init();
 
-			TokenModifierManager.AddToManager();
 			ConfigurableFieldManager.AddMod(this);
 		}	
 	}

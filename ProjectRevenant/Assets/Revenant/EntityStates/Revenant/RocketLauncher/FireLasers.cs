@@ -60,11 +60,9 @@ namespace EntityStates.Revenant.RocketLauncher
                         break;
                     case Muzzle.Both:
                         var ba = CreateBulletAttack(muzzleTransforms.leftMuzzleChildLocatorName);
-                        R2API.DamageAPI.AddModdedDamageType(ba, RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
                         ba.Fire();
 
                         ba = CreateBulletAttack(muzzleTransforms.rightMuzzleChildLocatorName);
-                        R2API.DamageAPI.AddModdedDamageType(ba, RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
                         ba.Fire();
                         break;
                 }

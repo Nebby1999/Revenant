@@ -12,14 +12,14 @@
 		"REV_REVENANT_OUTRO_FLAVOR": "...And so it left, scream eternal.",
 		"REV_REVENANT_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "...And so it vanished, It's agitation smothered.",
 
-		"REV_REVENANT_PRIMARY_LASER_NAME": "Planar Laser",
-		"REV_REVENANT_PRIMARY_LASER_DESC": "Fire an instant Laser that deals {0}% damage, every 3rd shot fires two Lasers instead.",
+		"REV_REVENANT_SECONDARY_LASER_NAME": "Planar Laser",
+		"REV_REVENANT_SECONDARY_LASER_DESC": "Fire an instant Laser that deals {0}% damage, every 3rd shot fires two Lasers instead.",
 
-		"REV_REVENANT_PRIMARY_ROCKET_NAME": "Planar Rocket",
-		"REV_REVENANT_PRIMARY_ROCKET_DESC": "Fire a rocket that deals {0}% damage on impact that detonates after a short while for {1}% damage, every 3rd shot fires two homing rockets instead.",
+		"REV_REVENANT_SECONDARY_ROCKET_NAME": "Planar Rocket",
+		"REV_REVENANT_SECONDARY_ROCKET_DESC": "Fire a rocket that deals {0}% damage on impact that detonates after a short while for {1}% damage, every 3rd shot fires two homing rockets instead.",
 
-		"REV_REVENANT_SECONDARY_PUNCH_NAME": "Lemurian Claws",
-		"REV_REVENANT_SECONDARY_PUNCH_DESC": "Swipe at your oponents, dealing {0}% damage",
+		"REV_REVENANT_PRIMARY_PUNCH_NAME": "Lemurian Claws",
+		"REV_REVENANT_PRIMARY_PUNCH_DESC": "Swipe at your oponents, dealing {0}% damage",
 
 		"REV_REVENANT_UTIL_DASH_NAME": "Planar Dash",
 		"REV_REVENANT_UTIL_DASH_DESC":  "Planar Consuming, Spend {0} Planar Energy and dash in the direction you're moving.",

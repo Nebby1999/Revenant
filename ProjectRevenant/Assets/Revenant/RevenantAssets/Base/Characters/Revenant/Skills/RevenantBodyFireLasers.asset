@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RevenantBodyFireLasers
   m_EditorClassIdentifier: 
   skillName: FireLasers
-  skillNameToken: REV_REVENANT_PRIMARY_LASER_NAME
-  skillDescriptionToken: REV_REVENANT_PRIMARY_LASER_DESC
+  skillNameToken: REV_REVENANT_SECONDARY_LASER_NAME
+  skillDescriptionToken: REV_REVENANT_SECONDARY_LASER_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: RocketLauncher
@@ -22,15 +22,15 @@ MonoBehaviour:
     _typeName: EntityStates.Revenant.RocketLauncher.FireLasers, Revenant, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 0
-  baseRechargeInterval: 0
-  baseMaxStock: 1
-  rechargeStock: 1
+  baseRechargeInterval: 3
+  baseMaxStock: 3
+  rechargeStock: 3
   requiredStock: 1
   stockToConsume: 1
   resetCooldownTimerOnUse: 1
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
-  beginSkillCooldownOnSkillEnd: 1
+  beginSkillCooldownOnSkillEnd: 0
   cancelSprintingOnActivation: 1
   forceSprintDuringState: 0
   canceledFromSprinting: 0

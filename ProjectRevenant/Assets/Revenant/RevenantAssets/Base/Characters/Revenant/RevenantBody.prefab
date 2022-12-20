@@ -114,7 +114,7 @@ MonoBehaviour:
   bodyFlags: 16
   rootMotionInMainState: 0
   mainRootSpeed: 0
-  baseMaxHealth: 110
+  baseMaxHealth: 90
   baseRegen: 1
   baseMaxShield: 0
   baseMoveSpeed: 7
@@ -128,7 +128,7 @@ MonoBehaviour:
   baseJumpCount: 1
   sprintingSpeedMultiplier: 1.45
   autoCalculateLevelStats: 1
-  levelMaxHealth: 33
+  levelMaxHealth: 27
   levelRegen: 0.2
   levelMaxShield: 0
   levelMoveSpeed: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
-  skillName: FireRocket
+  skillName: Punch
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &6621659619872148675
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}
-  skillName: Punch
+  skillName: FireRocket
   hideInCharacterSelect: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &7110562614778764017
@@ -879,7 +879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6017930874791469730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 2}
+  m_LocalPosition: {x: 0, y: 1, z: 1.88}
   m_LocalScale: {x: 5, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 1155860272108466216}

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moonstorm;
+using R2API;
 using UnityEngine;
 
 namespace EntityStates.Revenant.Weapon
@@ -26,7 +27,7 @@ namespace EntityStates.Revenant.Weapon
 
         public override void AuthorityModifyOverlapAttack(OverlapAttack overlapAttack)
         {
-			overlapAttack.damageType = DamageType.Stun1s;
+			overlapAttack.AddModdedDamageType(RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
         }
         public override InterruptPriority GetMinimumInterruptPriority()
 		{

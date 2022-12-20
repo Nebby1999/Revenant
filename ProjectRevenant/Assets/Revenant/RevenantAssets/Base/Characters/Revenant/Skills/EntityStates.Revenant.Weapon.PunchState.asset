@@ -19,7 +19,7 @@ MonoBehaviour:
     serializedFields:
     - fieldName: baseDuration
       fieldValue:
-        stringValue: 1
+        stringValue: 0.5
         objectValue: {fileID: 0}
     - fieldName: damageCoefficient
       fieldValue:
@@ -52,8 +52,7 @@ MonoBehaviour:
     - fieldName: swingEffectPrefab
       fieldValue:
         stringValue: 
-        objectValue: {fileID: 1077960702369907880, guid: a0cedcc772d52e44ab1018523a8a3a06,
-          type: 3}
+        objectValue: {fileID: 0}
     - fieldName: swingEffectMuzzleString
       fieldValue:
         stringValue: PunchSwing
@@ -68,7 +67,7 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: beginStateSoundString
       fieldValue:
-        stringValue: 
+        stringValue: Play_acrid_m2_bite_shoot
         objectValue: {fileID: 0}
     - fieldName: beginSwingSoundString
       fieldValue:
@@ -96,9 +95,5 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: baseDurationBeforeInterruptable
       fieldValue:
-        stringValue: 0
-        objectValue: {fileID: 0}
-    - fieldName: TokenModifier_DmgCoef
-      fieldValue:
-        stringValue: 0
+        stringValue: 0.5
         objectValue: {fileID: 0}

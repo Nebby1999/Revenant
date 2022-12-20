@@ -1,4 +1,4 @@
-{
+﻿{
     "name": "Revenant",
     "references": [
         "Unity.Postprocessing.Runtime",
@@ -7,13 +7,13 @@
         "UnityEngine.UI",
         "MoonstormSharedUtils"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
         "BepInEx.dll",
-        "R2API.dll",
         "MonoMod.Utils.dll",
         "Mono.Cecil.dll",
         "MMHOOK_RoR2.dll",
@@ -27,10 +27,17 @@
         "Unity.TextMeshPro.dll",
         "UnityEngine.UI.dll",
         "Unity.Postprocessing.Runtime.dll",
-        "KinematicCharacterController.dll"
+        "KinematicCharacterController.dll",
+        "R2API.ArtifactCode.dll",
+        "R2API.CommandHelper.dll",
+        "R2API.ContentManagement.dll",
+        "R2API.Core.dll",
+        "R2API.DamageType.dll",
+        "R2API.Director.dll",
+        "R2API.Elites.dll",
+        "R2API.RecalculateStats.dll",
+        "R2API.Colors.dll"
     ],
     "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "defineConstraints": []
 }
