@@ -34,8 +34,19 @@ namespace RevenantMod.Components
 
         [Header("Other")]
         [SerializeField] private float baseBleedChance;
-
-        public bool RestoreFuel { get; set;  }
+        
+        public float FuelRestoreCoefficient
+        {
+            get
+            {
+                return fuelRestoreCoefficient;
+            }
+            set
+            {
+                fuelRestoreCoefficient = Mathf.Abs(value);
+            }
+        }
+        private float fuelRestoreCoefficient = 1;
         public float MaxFuel { get; private set; }
         public float CurrentFuel => currentFuel;
         [SyncVar] private float currentFuel;
@@ -79,10 +90,7 @@ namespace RevenantMod.Components
         {
             if(NetworkServer.active)
             {
-                if(RestoreFuel)
-                {
-                    AddFuel(fuelRestoredPerSecond * Time.fixedDeltaTime);
-                }
+                AddFuel(fuelRestoredPerSecond * fuelRestoreCoefficient * Time.fixedDeltaTime);
             }
             UpdateUI();
         }

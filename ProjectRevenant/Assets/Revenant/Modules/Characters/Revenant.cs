@@ -22,9 +22,6 @@ namespace RevenantMod.Characters
         {
             var cb = BodyPrefab.GetComponent<CharacterBody>();
             cb._defaultCrosshairPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/UI/SimpleDotCrosshair.prefab").WaitForCompletion(); ;
-
-            var ctp = BodyPrefab.GetComponent<CameraTargetParams>();
-            ctp.cameraParams = Addressables.LoadAssetAsync<CharacterCameraParams>("RoR2/Base/Common/ccpStandard.asset").WaitForCompletion();
         }
     }
 }

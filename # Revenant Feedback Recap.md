@@ -9,16 +9,17 @@ Striken thru text is stuff thats been changed.
     
 ~~* Could increase thrust when falling, and hard limiting the negative velocity as soon as space is pressed.~~ Already implemented on custom GenericCharacterMain
 
-* Maybe make the max vertical thrust speed capped
-* Fuel shouldnt be spent immediatly as soon as spacebar is pressed, maybe have a moment of leniency so that you can do hops easily.
+~~* Maybe make the max vertical thrust speed capped~~
+
+~~* Fuel shouldnt be spent immediatly as soon as spacebar is pressed, maybe have a moment of leniency so that you can do hops easily.~~
 
 ## Rockets:
 
-* Should spawn from the center instead of from child, use a flashy effect to hide the fact the spawn isnt centered.
-* Homing rocket should be more controllable (Maybe shot a raycast and if it finds something manually set the target?)
- * Create a new ProjectileDirectionalTargetFinder but with homing set to "Angle" instead of Angle+Distance.
- * Current homing behaviour shifting feels unreliable and sudden.
- * Should probably 1 shot wisps with a single shot at level 1
+~~* Should spawn from the center instead of from child, use a flashy effect to hide the fact the spawn isnt centered.~~
+~~* Homing rocket should be more controllable (Maybe shot a raycast and if it finds something manually set the target?)~~
+ ~~* Create a new ProjectileDirectionalTargetFinder but with homing set to "Angle" instead of Angle+Distance.~~
+ ~~* Current homing behaviour shifting feels unreliable and sudden.~~
+ ~~* Should probably 1 shot wisps with a single shot at level 1~~
 
 ## Lasers:
 * Deceptively Weak, Damage falloff makes the attack difficult to use and slightly punishing due to the base slow attack speed. 

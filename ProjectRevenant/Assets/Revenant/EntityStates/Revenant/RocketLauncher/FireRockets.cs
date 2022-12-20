@@ -51,11 +51,11 @@ namespace EntityStates.Revenant.RocketLauncher
                 switch(CurrentMuzzle)
                 {
                     case Muzzle.Left:
-                        info.position = muzzleTransforms.leftMuzzle.position;
+                        //info.position = muzzleTransforms.leftMuzzle.position;
                         ProjectileManager.instance.FireProjectile(info);
                         break;
                     case Muzzle.Right:
-                        info.position = muzzleTransforms.rightMuzzle.position;
+                        //info.position = muzzleTransforms.rightMuzzle.position;
                         ProjectileManager.instance.FireProjectile(info);
                         break;
                     case Muzzle.Both:
@@ -81,7 +81,37 @@ namespace EntityStates.Revenant.RocketLauncher
             pInfo.force = force;
             pInfo.crit = crit;
             pInfo.damageColorIndex = DamageColorIndex.Default;
+            pInfo.target = CurrentMuzzle == Muzzle.Both ? GetTarget() : null;
             return pInfo;
+        }
+
+        public GameObject GetTarget()
+        {
+            if (Util.CharacterSpherecast(gameObject, aimRay, 3, out RaycastHit hit, 1000, LayerIndex.entityPrecise.intVal, QueryTriggerInteraction.UseGlobal))
+            {
+                if (!hit.collider)
+                    return null;
+
+                HurtBox hurtBox = hit.collider.GetComponent<HurtBox>();
+                if(!hurtBox)
+                {
+                    return null;
+                }
+
+                HealthComponent hc = hurtBox.healthComponent;
+                if(!hc)
+                {
+                    return null;
+                }
+
+                if(hc.body.teamComponent.teamIndex == teamComponent.teamIndex)
+                {
+                    return null;
+                }
+
+                return hit.collider.gameObject;
+            }
+            return null;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

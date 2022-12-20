@@ -23,11 +23,11 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 0
   baseRechargeInterval: 3
-  baseMaxStock: 3
+  baseMaxStock: 5
   rechargeStock: 3
   requiredStock: 1
   stockToConsume: 1
-  resetCooldownTimerOnUse: 1
+  resetCooldownTimerOnUse: 0
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
   beginSkillCooldownOnSkillEnd: 0

@@ -36,6 +36,7 @@ namespace EntityStates.Revenant
         {
             base.ProcessJump();
             timer = isGrounded ? 0 : timer + Time.fixedDeltaTime;
+            JetpackController.FuelRestoreCoefficient = isGrounded ? 1 : 0.5f;
             if(hasCharacterMotor && hasInputBank && isAuthority)
             {
                 bool jumpIsDown = inputBank.jump.down;
@@ -51,5 +52,6 @@ namespace EntityStates.Revenant
                 }
             }
         }
+ 
     }
 }

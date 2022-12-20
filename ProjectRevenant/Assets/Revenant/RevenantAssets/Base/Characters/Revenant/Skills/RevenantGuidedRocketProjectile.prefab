@@ -12,32 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 717380117, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-643528402040559095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950396951582464409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -343225066, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookRange: 30
-  lookCone: 90.9
-  targetSearchInterval: 0.1
-  onlySearchIfNoTarget: 1
-  allowTargetLoss: 0
-  testLoS: 1
-  ignoreAir: 0
-  flierAltitudeTolerance: Infinity
-  onNewTargetFound:
-    m_PersistentCalls:
-      m_Calls: []
-  onTargetLost:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2592386827476596643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +26,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yAxisOnly: 0
   rotationSpeed: 270
+--- !u!114 &8883148437583466068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950396951582464409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5825c07b6e32cdb49b43d0ecd65d1637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRange: 30
+  lookCone: 45
+  targetSearchInterval: 0.1
+  onlySearchIfNoTarget: 1
+  allowTargetLoss: 0
+  testLoS: 1
+  ignoreAir: 0
+  flierAltitudeTolerance: Infinity
+  onNewTargetFound:
+    m_PersistentCalls:
+      m_Calls: []
+  onTargetLost:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5640621439550432108
 PrefabInstance:
   m_ObjectHideFlags: 0
