@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 using FL = EntityStates.GolemMonster.FireLaser;
 
 namespace EntityStates.Revenant.RocketLauncher
@@ -19,12 +19,12 @@ namespace EntityStates.Revenant.RocketLauncher
         public static GameObject tracerEffectPrefab;
         [HideInInspector]
         public static GameObject areaIndicatorPrefab;
-        [TokenModifier(tkn, StatTypes.Default, 0)]
+        [FormatToken(tkn, 0)]
         public static int laserAmount;
         public static float firingDuration;
         public static float minSpread;
         public static float maxSpread;
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "100")]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float damageCoef;
         public static float force;
         public static float laserRadius;

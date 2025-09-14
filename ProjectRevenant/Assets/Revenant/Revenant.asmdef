@@ -6,7 +6,7 @@
         "com.unity.multiplayer-hlapi.Runtime",
         "Unity.TextMeshPro",
         "UnityEngine.UI",
-        "MoonstormSharedUtils"
+        "MSU.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -39,9 +39,7 @@
         "R2API.Colors.dll"
     ],
     "autoReferenced": true,
-    "defineConstraints": [
-        "KEKW"
-    ],
+    "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
 }

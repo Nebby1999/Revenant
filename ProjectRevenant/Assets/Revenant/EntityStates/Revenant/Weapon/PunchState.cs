@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Moonstorm;
+using MSU;
 using R2API;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ namespace EntityStates.Revenant.Weapon
 		private float durationBeforeInterruptable;
 
 		//For use in the token modifier, not used in the state
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 0, "100")]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
 		public static float TokenModifier_DmgCoef => new PunchState().damageCoefficient;
         public override void OnEnter()
         {
@@ -27,7 +27,8 @@ namespace EntityStates.Revenant.Weapon
 
         public override void AuthorityModifyOverlapAttack(OverlapAttack overlapAttack)
         {
-			overlapAttack.AddModdedDamageType(RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
+			//FIXME
+			//overlapAttack.AddModdedDamageType(RevenantMod.DamageTypes.AntiCoagulant.dtAntiCoagulant);
         }
         public override InterruptPriority GetMinimumInterruptPriority()
 		{

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 
 namespace EntityStates.Revenant.RocketLauncher
 {
@@ -16,13 +16,13 @@ namespace EntityStates.Revenant.RocketLauncher
         public static GameObject areaIndicatorPrefab = EntityStates.Huntress.ArrowRain.areaIndicatorPrefab;
         public static GameObject rocketPrefab;
         public static GameObject guidedRocketPrefab;
-        [TokenModifier(tkn, StatTypes.Default, 3)]
+        [FormatToken(tkn, 3)]
         public static float guidedChance;
-        [TokenModifier(tkn, StatTypes.Default, 0)]
+        [FormatToken(tkn, 0)]
         public static int rocketAmount;
         public static float firingDuration;
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 2, "300")]
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "100")]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 300, 2)]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float damageCoef;
         public static float force;
         

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityStates;
-using Moonstorm.Loaders;
+using MSU;
 using R2API.ScriptableObjects;
 using RoR2;
 
 namespace RevenantMod
 {
-    public class RevenantContent : ContentLoader<RevenantContent>
+    public class RevenantContent //: ContentLoader<RevenantContent>
     {
         public static class Survivors
         {
@@ -21,9 +21,11 @@ namespace RevenantMod
         {
             public static BuffDef bdAntiCoagulant;
         }
+        /*
 
         public override string identifier => RevenantMain.GUID;
-        public override R2APISerializableContentPack SerializableContentPack { get; protected set; } = RevenantAssets.LoadAsset<R2APISerializableContentPack>("RevenantContentPack");
+        //FIXME
+        public override R2APISerializableContentPack SerializableContentPack { get; protected set; } = null;//RevenantAssets.LoadAsset<R2APISerializableContentPack>("RevenantContentPack");
         public override Action[] LoadDispatchers { get; protected set; }
         public override Action[] PopulateFieldsDispatchers { get; protected set; }
 
@@ -49,8 +51,9 @@ namespace RevenantMod
                 () =>
                 {
                     RevLog.Info($"Loading Entity States");
-                    SerializableContentPack.entityStateConfigurations = RevenantAssets.LoadAllAssetsOfType<EntityStateConfiguration>();
-                    GetType().Assembly.GetTypes()
+                    //FIXME
+                    SerializableContentPack.entityStateConfigurations = null;//RevenantAssets.LoadAllAssetsOfType<EntityStateConfiguration>();
+                    this.GetType().Assembly.GetTypes()
                                       .Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type) && !type.IsAbstract)
                                       .ToList()
                                       .ForEach(state => HG.ArrayUtils.ArrayAppend(ref SerializableContentPack.entityStateTypes, new EntityStates.SerializableEntityStateType(state)));
@@ -60,15 +63,16 @@ namespace RevenantMod
 
             PopulateFieldsDispatchers = new Action[]
             {
+                //FIXME
                 () =>
                 {
-                    PopulateTypeFields(typeof(Survivors), ContentPack.survivorDefs);
+                    //ContentUtil.PopulateTypeFields(typeof(Survivors), ContentPack.survivorDefs);
                 },
                 () =>
                 {
-                    PopulateTypeFields(typeof(BuffDefs), ContentPack.buffDefs);
+                    //ContentUtil.PopulateTypeFields(typeof(BuffDef), ContentPack.buffDefs);
                 }
             };
-        }
+        }*/
     }
 }

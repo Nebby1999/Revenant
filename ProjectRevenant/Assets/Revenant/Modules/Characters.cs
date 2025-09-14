@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Moonstorm;
+using MSU;
 using R2API.ScriptableObjects;
 
 namespace RevenantMod.Modules
 {
-    public class Characters : CharacterModuleBase
+    public class Characters //: CharacterModuleBase
     {
+        /*
         public override R2APISerializableContentPack SerializableContentPack => RevenantContent.Instance.SerializableContentPack;
 
         public override void Initialize()
@@ -21,5 +22,6 @@ namespace RevenantMod.Modules
                 AddCharacter(cb);
             }
         }
+        */
     }
 }

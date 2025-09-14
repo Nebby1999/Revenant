@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Moonstorm.Loaders;
-using Moonstorm;
+using MSU;
 using UnityEngine;
 using System.IO;
 
 namespace RevenantMod
 {
-    public class RevenantAssets : AssetsLoader<RevenantAssets>
+    public class RevenantAssets
     {
-        public override AssetBundle MainAssetBundle => _mainBundle;
+        /*public override AssetBundle MainAssetBundle => _mainBundle;
         private AssetBundle _mainBundle;
         public string AssemblyDir => Path.GetDirectoryName(RevenantMain.Instance.Info.Location);
 
@@ -27,6 +26,6 @@ namespace RevenantMod
         internal void SwapMaterialShaders()
         {
             SwapShadersFromMaterials(MainAssetBundle.LoadAllAssets<Material>().Where(m => m.shader.name.StartsWith("Stubbed")));
-        }
+        }*/
     }
 }

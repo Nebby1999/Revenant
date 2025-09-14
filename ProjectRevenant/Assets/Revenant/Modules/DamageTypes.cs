@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 using R2API.ScriptableObjects;
 
 namespace RevenantMod.Modules
 {
-    public class DamageTypes : DamageTypeModuleBase
+    public class DamageTypes// : DamageTypeModuleBase
     {
+        /*
         public override void Initialize()
         {
             base.Initialize();
@@ -16,6 +17,6 @@ namespace RevenantMod.Modules
             {
                 AddDamageType(dtb);
             }
-        }
+        }*/
     }
 }

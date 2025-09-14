@@ -1,4 +1,4 @@
-﻿using Moonstorm;
+﻿using MSU;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace RevenantMod.Buffs
 {
-    public class AntiCoagulant : BuffBase
+    public class AntiCoagulant //: BuffBase
     {
-        public override BuffDef BuffDef => RevenantAssets.LoadAsset<BuffDef>("bdAntiCoagulant");
+        /*public override BuffDef BuffDef => RevenantAssets.LoadAsset<BuffDef>("bdAntiCoagulant");
 
         private static float durationCoefficient = 0.1f;
         private static float damageCoefficient = 0.05f;
@@ -54,6 +54,6 @@ namespace RevenantMod.Buffs
                 RevLog.Info($"Old Values: Dur {origDuration}; Dmg {origDamageMult}\nNew Values: Dur {duration}; Dmg {damageMultiplier}");
             }
             orig(victimObject, attackerObject, dotIndex, duration, damageMultiplier, maxStacksFromAttacker);
-        }
+        }*/
     }
 }

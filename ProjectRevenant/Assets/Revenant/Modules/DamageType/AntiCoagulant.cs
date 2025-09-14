@@ -1,4 +1,4 @@
-﻿using Moonstorm;
+﻿using MSU;
 using R2API;
 using System;
 using System.Collections.Generic;
@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace RevenantMod.DamageTypes
 {
-    public class AntiCoagulant : DamageTypeBase
+    public class AntiCoagulant //: DamageTypeBase
     {
+        /*
         public static DamageAPI.ModdedDamageType dtAntiCoagulant => instance.ModdedDamageType;
         public override DamageAPI.ModdedDamageType ModdedDamageType { get; protected set; }
         private static AntiCoagulant instance;
@@ -22,6 +23,6 @@ namespace RevenantMod.DamageTypes
         public override void Delegates()
         { 
             //lol
-        }
+        }*/
     }
 }

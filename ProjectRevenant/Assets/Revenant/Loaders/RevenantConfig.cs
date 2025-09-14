@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using Moonstorm.Loaders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace RevenantMod
 {
-    public class RevenantConfig : ConfigLoader<RevenantConfig>
+    public class RevenantConfig// : ConfigLoader<RevenantConfig>
     {
-        public override BaseUnityPlugin MainClass => RevenantMain.Instance;
+        /*public override BaseUnityPlugin MainClass => RevenantMain.Instance;
 
-        public override bool CreateSubFolder => false;
+        public override bool CreateSubFolder => false;*/
     }
 }

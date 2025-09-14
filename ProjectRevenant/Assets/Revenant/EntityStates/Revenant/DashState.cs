@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-using Moonstorm;
+using MSU;
 
 namespace EntityStates.Revenant
 {
@@ -19,8 +19,9 @@ namespace EntityStates.Revenant
         public static Vector3 onAirMaxSpeed;
         public static float onAirDashSpeedCoefficient;
 
-        [TokenModifier(tkn, StatTypes.Default, 0)]
-        public static float TokenModifier_FuelConsumed => RevenantAssets.LoadAsset<RevenantFuelSkillDef>("RevenantBodyDash").baseFuelCost;
+        //FIXME
+        [FormatToken(tkn, 0)]
+        public static float TokenModifier_FuelConsumed => 3;//RevenantAssets.LoadAsset<RevenantFuelSkillDef>("RevenantBodyDash").baseFuelCost;
 
         private Vector3 forwardDirection;
         private float dashSpeed;

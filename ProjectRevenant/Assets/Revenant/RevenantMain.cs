@@ -4,7 +4,7 @@ using R2API.ScriptableObjects;
 using R2API.Utils;
 using R2API.ContentManagement;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 using System.Security.Permissions;
 using System.Security;
 
@@ -29,15 +29,16 @@ namespace RevenantMod
 
 		private void Awake()
 		{
+			//FIXME
 			Instance = this;
 			new RevLog(Logger);
 
-			new RevenantAssets().Init();
+			//new RevenantAssets().Init();
 			new RevenantConfig();
 			new RevenantLanguage().Init();
-			new RevenantContent().Init();
+			//new RevenantContent().Init();
 
-			ConfigurableFieldManager.AddMod(this);
+			//ConfigurableFieldManager.AddMod(this);
 		}	
 	}
 }

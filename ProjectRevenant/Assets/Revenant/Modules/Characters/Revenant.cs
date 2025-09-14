@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Moonstorm;
+using MSU;
 using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace RevenantMod.Characters
 {
-    public class Revenant : SurvivorBase
+    public class Revenant //: SurvivorBase
     {
+        /*
         public override SurvivorDef SurvivorDef => RevenantAssets.LoadAsset<SurvivorDef>("Revenant");
 
         public override GameObject BodyPrefab => RevenantAssets.LoadAsset<GameObject>("RevenantBody");
@@ -22,6 +23,6 @@ namespace RevenantMod.Characters
         {
             var cb = BodyPrefab.GetComponent<CharacterBody>();
             cb._defaultCrosshairPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/UI/SimpleDotCrosshair.prefab").WaitForCompletion(); ;
-        }
+        }*/
     }
 }

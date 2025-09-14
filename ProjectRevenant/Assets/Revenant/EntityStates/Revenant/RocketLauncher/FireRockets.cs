@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 
 namespace EntityStates.Revenant.RocketLauncher
 {
@@ -16,8 +16,8 @@ namespace EntityStates.Revenant.RocketLauncher
 
         public static GameObject rocketPrefab;
         public static GameObject guidedRocketPrefab;
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 1, "300")]
-        [TokenModifier(tkn, StatTypes.MultiplyByN, 0, "100")]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 300, 1)]
+        [FormatToken(tkn, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float damageCoef;
         public static float force;
 

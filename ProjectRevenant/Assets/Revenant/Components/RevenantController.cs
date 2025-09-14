@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Moonstorm;
+using MSU;
 using RoR2;
 using RoR2.HudOverlay;
 using UnityEngine.Networking;
@@ -164,7 +164,8 @@ namespace RevenantMod.Components
                 AddFuel(num);
             }
 
-            if(DamageAPI.HasModdedDamageType(damageInfo, DamageTypes.AntiCoagulant.dtAntiCoagulant))
+            //FIXME
+            if(/*DamageAPI.HasModdedDamageType(damageInfo, DamageTypes.AntiCoagulant.dtAntiCoagulant)*/ false)
             {
                 victimBody.AddTimedBuff(RevenantContent.BuffDefs.bdAntiCoagulant, antiCoagulantDuration * damageReport.damageInfo.procCoefficient);
             }
