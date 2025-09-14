@@ -1,5 +1,6 @@
-﻿{
+{
     "name": "Revenant",
+    "rootNamespace": "",
     "references": [
         "Unity.Postprocessing.Runtime",
         "com.unity.multiplayer-hlapi.Runtime",
@@ -7,7 +8,6 @@
         "UnityEngine.UI",
         "MoonstormSharedUtils"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -39,5 +39,9 @@
         "R2API.Colors.dll"
     ],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [
+        "KEKW"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
