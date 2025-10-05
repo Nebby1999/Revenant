@@ -21,7 +21,7 @@ namespace EntityStates.RevenantMod
         public static float fallingThrustBoost;
         [Tooltip("If we're actively thrusting, this value is deducted from the fuel each second.")]
         public static float fuelConsumedPersecond;
-        public static float xzMovementBonusMultiplier = 1.1f;
+        public static float xzMovementBonusMultiplier = 2f;
 
         private float _gravityModifier;
         private float _thrust;
@@ -36,13 +36,11 @@ namespace EntityStates.RevenantMod
             //This is done so that the thrust is equal to the gravity of the area. The default world gravity is -30, if you add the current gravity's absolute value to the default world gravity we can get a reasonable thrust modifier to make the thrust feel "good" on different scenes. Specially useful for moon2
             _gravityModifier = DEFAULT_WORLD_GRAVITY + Mathf.Abs(Physics.gravity.y);
             _thrust = baseThrust + _gravityModifier;
-            stringBuilder = new StringBuilder();
         }
 
         public override void ProcessJump()
         {
             base.ProcessJump();
-            stringBuilder.Clear();
 
             if (!JetpackController && !hasInputBank && !hasCharacterMotor)
                 return;
@@ -59,9 +57,6 @@ namespace EntityStates.RevenantMod
             {
                 _jetpackEnableTimer += Time.fixedDeltaTime;
             }
-
-            //Calculate the movement speed of the character, this will come in useful for the xz mobility boost.
-            float movementSpeed = characterBody.moveSpeed * (characterBody.isSprinting ? characterBody.sprintingSpeedMultiplier : 1);
 
             Vector3 computedXzBonus = Vector3.zero;
             Vector3 motorVelocity = characterMotor.velocity;
@@ -88,7 +83,7 @@ namespace EntityStates.RevenantMod
                 }
 
                 //Directional Boost
-                float movementSpeedWithBonus = movementSpeed * xzMovementBonusMultiplier;
+                float movementSpeedWithBonus = moveSpeedStat * xzMovementBonusMultiplier;
                 computedXzBonus = moveVector * movementSpeedWithBonus;
                 computedXzBonus.y = 0;
 
@@ -104,7 +99,17 @@ namespace EntityStates.RevenantMod
             }
 
             _xzMovementBonus = Vector3.MoveTowards(_xzMovementBonus, computedXzBonus, characterBody.acceleration * Time.fixedDeltaTime);
+
+            if(Mathf.Abs(motorVelocity.x) <= Mathf.Abs(_xzMovementBonus.x))
+            {
+                motorVelocity.x = _xzMovementBonus.x;
+            }
+            if (Mathf.Abs(motorVelocity.z) <= Mathf.Abs(_xzMovementBonus.z))
+            {
+                motorVelocity.z = _xzMovementBonus.z;
+            }
             characterMotor.velocity = motorVelocity;
+            RevLog.Info(characterMotor.velocity);
         }
     }
 }
