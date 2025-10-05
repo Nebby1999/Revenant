@@ -2,7 +2,9 @@
     "name": "RevenantMod",
     "rootNamespace": "RevenantMod",
     "references": [
-        "GUID:08e20a9dcb84ac748840227dcac08af2"
+        "GUID:08e20a9dcb84ac748840227dcac08af2",
+        "GUID:a44f47cf3ada4435dbc516bad0bc86fe",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

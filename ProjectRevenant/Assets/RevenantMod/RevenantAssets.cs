@@ -10,69 +10,27 @@ using System.Text;
 using UnityEngine;
 using UObject = UnityEngine.Object;
 
-/*
- * This file contains all the code necesary for loading, managing and utilizing your mod's Assets and Asset Bundles.
- * 
- * Due to how unity's asset bundle building works, it is recommended to have multiple AssetBundles for your mod, this 
- * class manages loading assets from the multiple bundles setup instead of a singular bundle setup.
- */ 
 
 namespace RevenantMod
 {
-    /// <summary>
-    /// Outside of Invalid, StreamedScene and All, each entry in this enum represents a non StreamedScene asset bundle 
-    /// from your mod.
-    /// </summary>
     public enum RevenantBundle
     {
-        /// <summary>
-        /// Represents an Invalid bundle, this is usually returned by the internal "FindAsset" type methods.
-        /// </summary>
         Invalid,
-        /// <summary>
-        /// Represents a Streamed Scene bundle, this is only used during AssetBundle loading and using this value in other methods returns early or null, depending on the method signature
-        /// </summary>
         StreamedScene,
-        /// <summary>
-        /// A special enum value, if supplied on <see cref="RevenantAssets.LoadAsset{TAsset}(string, RevenantBundle)"/> or <see cref="RevenantAssets.LoadAllAssets{TAsset}(RevenantBundle)"/>, it'll search all the loaded asset bundles and return the first match or a collection of matches. This also applies to their Async counterparts.
-        /// </summary>
         All,
-        /// <summary>
-        /// Represents the Main assetbundle, which contains the ExpansionDef, the mod's Icon, alongside other critical assets for the mod to work.
-        /// </summary>
         Main
     }
-    /// <summary>
-    /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.
-    /// </summary>
+
     public static class RevenantAssets
     {
-        /*
-         * It is customary to have the asset bundle folder's name as a constant. So we can later enumerate the files in
-         * the Directory for loading the AssetBundles.
-         */ 
         private const string ASSET_BUNDLE_FOLDER_NAME = "assetbundles";
-        /*
-         * If you decide to add a new AssetBundle (for example, an AssetBundle for Artifacts). Make sure to add a new
-         * entry to these constants. The value of each constant is the Assetbundle name as specified in your mod's 
-         * Manifest.
-         */
-        private const string MAIN = "revenantmain";
+        private const string MAIN = "revmain";
 
-        //Property for obtaining the Folder where all the asset bundles are located.
         private static string assetBundleFolderPath => Path.Combine(Path.GetDirectoryName(RevenantMain.instance.Info.Location), ASSET_BUNDLE_FOLDER_NAME);
 
-        /*
-         * The main system for managing multiple bundles at once, is simply assigning each non streamed scene bundle an
-         * Enum value. Streamed Scene bundles are added to the array below, as these asset bundles cant be used for 
-         * loading assets.
-         */
         private static Dictionary<RevenantBundle, AssetBundle> _assetBundles = new Dictionary<RevenantBundle, AssetBundle>();
         private static AssetBundle[] _streamedSceneBundles = Array.Empty<AssetBundle>();
 
-        /// <summary>
-        /// Fired when all the AssetBundles from the mod are loaded into memory, this in turn gets fired during Content Pack Loading and as such should be used to implement new async loading calls to <see cref="RevenantContent._parallelPreLoadDispatchers"/>
-        /// </summary>
         public static ResourceAvailability assetsAvailability;
 
         /// <summary>
@@ -90,13 +48,11 @@ namespace RevenantMod
             return _assetBundles[bundle];
         }
 
-        //Method to ensure the method "GetAssetBundle" doesnt try to access an invalid key.
         private static bool IsEnumValueInvalidForGetAssetBundleOperation(RevenantBundle bundle)
         {
             return bundle == RevenantBundle.All || bundle == RevenantBundle.Invalid || bundle == RevenantBundle.StreamedScene;
         }
 
-        //Method to ensure the asset loading methods dont try to access an invalid assetbundle
         private static bool IsEnumValueInvalidForAssetLoadingOperation(RevenantBundle bundle)
         {
             return bundle == RevenantBundle.Invalid || bundle == RevenantBundle.StreamedScene;
@@ -221,7 +177,6 @@ namespace RevenantMod
         internal static IEnumerator Initialize()
         {
             RevLog.Info($"Initializing Assets...");
-            //We need to load the asset bundles first otherwise the rest of the mod wont work.
             var loadRoutine = LoadAssetBundles();
 
             while(!loadRoutine.IsDone())
@@ -229,14 +184,12 @@ namespace RevenantMod
                 yield return null;
             }
 
-            //We can swap shaders in parallel
             MSU.ParallelCoroutine parallelCoroutine = new MSU.ParallelCoroutine();
             parallelCoroutine.Add(SwapShaders());
             parallelCoroutine.Add(SwapAddressableShaders());
 
             while (!parallelCoroutine.isDone) yield return null;
 
-            //Asset bundles have been loaded and shaders have been swapped, invoke method.
             assetsAvailability.MakeAvailable();
             yield break;
         }
@@ -245,10 +198,9 @@ namespace RevenantMod
         //look at the method "LoadFromPath", that one contains stuff you should be interested in modifying in the future.
         private static IEnumerator LoadAssetBundles()
         {
-            //Create a coroutine helper for parallel loading
             ParallelCoroutine parallelCoroutine = new();
 
-            List<(string path, RevenantBundle bundleEnum, AssetBundle loadedBundle)> pathsAndBundles = new List<(string path, RevenantBundle bundleEnum, AssetBundle loadedBundle)>(); //Save the necesary metadata from the loading process so we can handle it later.
+            List<(string path, RevenantBundle bundleEnum, AssetBundle loadedBundle)> pathsAndBundles = new List<(string path, RevenantBundle bundleEnum, AssetBundle loadedBundle)>();
 
             string[] paths = GetAssetBundlePaths();
             for (int i = 0; i < paths.Length; i++)
@@ -260,37 +212,27 @@ namespace RevenantMod
             while (!parallelCoroutine.IsDone())
                 yield return null;
 
-            //Parse the results
             foreach ((string path, RevenantBundle bundleEnum, AssetBundle assetBundle) in pathsAndBundles)
             {
                 if (bundleEnum == RevenantBundle.StreamedScene)
                 {
-                    //If the loading operation determined the bundle is a streamed scene, add it to the array
                     HG.ArrayUtils.ArrayAppend(ref _streamedSceneBundles, assetBundle);
                 }
                 else
                 {
-                    //Otherwise, add it to the dictionary for asset loading.
                     _assetBundles[bundleEnum] = assetBundle;
                 }
             }
         }
 
-        //This method is what actually loads the AssetBundle into memory, and assigns it a Bundle enum value if needed.
         private static IEnumerator LoadFromPath(List<(string path, RevenantBundle bundleEnum, AssetBundle loadedBundle)> list, string path, int index, int totalPaths)
         {
             string fileName = Path.GetFileName(path);
-            RevenantBundle? msutBundle = null;
-            //When you add new AssetBundles, you should add new Cases to this switch clause for your new bundles, for example, if you
-            //where to add an "Artifacts" bundle, you'd write the following line (which is commented in this scenario.) this is all you
-            //need to do to get new asset bundles loading.
+            RevenantBundle? revenantBundle = null;
             switch (fileName)
             {
-                case MAIN: msutBundle = RevenantBundle.Main; break;
-                //case ARTIFACTS: exampleBundle = ExampleBundle.Artifacts; break;
-
-                //This path does not match any of the non scene bundles, could be a scene, we will mark these on only this ocassion as "StreamedScene".
-                default: msutBundle = RevenantBundle.StreamedScene; break;
+                case MAIN: revenantBundle = RevenantBundle.Main; break;
+                default: revenantBundle = RevenantBundle.StreamedScene; break;
             }
 
             var request = AssetBundle.LoadFromFileAsync(path);
@@ -301,30 +243,25 @@ namespace RevenantMod
 
             AssetBundle bundle = request.assetBundle;
 
-            //Throw if no bundle was loaded
             if (!bundle)
             {
                 throw new FileLoadException($"AssetBundle.LoadFromFile did not return an asset bundle. (Path={path})");
             }
 
-            //The switch statement considered this a streamed scene bundle
-            if (msutBundle == RevenantBundle.StreamedScene)
+            if (revenantBundle == RevenantBundle.StreamedScene)
             {
-                //supposed bundle is not streamed scene? throw exception.
                 if (!bundle.isStreamedSceneAssetBundle)
                 {
                     throw new Exception($"AssetBundle in specified path is not a streamed scene bundle, but its file name was not found in the Switch statement. have you forgotten to setup the enum and file name in your assets class? (Path={path})");
                 }
                 else
                 {
-                    //bundle is streamed scene, add to the list and break.
                     list.Add((path, RevenantBundle.StreamedScene, bundle));
                     yield break;
                 }
             }
 
-            //The switch statement considered this to not be a streamed scene bundle, but an assets bundle.
-            list.Add((path, msutBundle.Value, bundle));
+            list.Add((path, revenantBundle.Value, bundle));
             yield break;
         }
 
@@ -333,7 +270,6 @@ namespace RevenantMod
             return Directory.GetFiles(assetBundleFolderPath).Where(filePath => !filePath.EndsWith(".manifest")).ToArray();
         }
 
-        //Utilize the built in "ShaderUtil" class from MSU to swap both kinds of shaders.
         private static IEnumerator SwapShaders()
         {
             return ShaderUtil.SwapStubbedShadersAsync(_assetBundles.Values.ToArray());
@@ -344,8 +280,6 @@ namespace RevenantMod
             return ShaderUtil.LoadAddressableMaterialShadersAsync(_assetBundles.Values.ToArray());
         }
 
-        //This method tries to find an asset of type TAsset and of a specific name in all the bundles, it returns the first match.
-        //There's usually no need to run this method in Release builds, and it mostly exists for Development purposes.
         private static TAsset FindAsset<TAsset>(string name) where TAsset : UnityEngine.Object
         {
             TAsset loadedAsset = null;
@@ -371,7 +305,6 @@ namespace RevenantMod
             return loadedAsset;
         }
 
-        //This method tries to find all assets of type TAsset in all the bundles, it returns a collection of assets.
         private static TAsset[] FindAssets<TAsset>() where TAsset : UnityEngine.Object
         {
             List<TAsset> assets = new List<TAsset>();
@@ -389,7 +322,6 @@ namespace RevenantMod
         }
 
 #if DEBUG
-        //These debug methods are utilized mainly for development purposes.
         private static string GetCallingMethod()
         {
             var stackTrace = new StackTrace();

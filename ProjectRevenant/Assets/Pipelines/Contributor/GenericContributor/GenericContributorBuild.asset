@@ -31,14 +31,14 @@ MonoBehaviour:
   PerManifest: 1
   ListType: 1
   Manifests:
-  - {fileID: 11400000, guid: 558b7accd11857e449045b790b8e2037, type: 2}
+  - {fileID: -3892906877110538616, guid: b562326d1c896424499d07b900b3803d, type: 2}
   - {fileID: 11400000, guid: 5ceb1d8ed3af40d4d806e9756b403649, type: 2}
-  StrictDictionaryReplace: 1
+  ReplaceDirectory: 1
   Recursive: 1
   SourceRequired: 0
   EstablishDestination: 1
-  Source: <BuildPath>
-  Destination: <GenericContributorPathh>
+  Source: <MSUBuildPath>
+  Destination: <NebbyPath>
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,4 +55,5 @@ MonoBehaviour:
   - {fileID: -3576180096776599551}
   - {fileID: -216652644370084839}
   QuickAccess: 1
-  manifest: {fileID: 11400000, guid: 558b7accd11857e449045b790b8e2037, type: 2}
+  manifest: {fileID: -3892906877110538616, guid: b562326d1c896424499d07b900b3803d,
+    type: 2}
