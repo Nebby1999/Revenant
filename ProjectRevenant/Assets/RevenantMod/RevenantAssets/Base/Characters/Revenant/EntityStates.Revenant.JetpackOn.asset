@@ -10,30 +10,38 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.RevenantCharacterMain
+  m_Name: EntityStates.Revenant.JetpackOn
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.RevenantMod.RevenantCharacterMain, RevenantMod,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    assemblyQualifiedName: EntityStates.RevenantMod.JetpackOn, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
-    - fieldName: jetpackEnableFromJumpTime
-      fieldValue:
-        stringValue: 0.25
-        objectValue: {fileID: 0}
     - fieldName: maxYVelocity
       fieldValue:
         stringValue: 30
         objectValue: {fileID: 0}
-    - fieldName: baseThrust
-      fieldValue:
-        stringValue: 40
-        objectValue: {fileID: 0}
-    - fieldName: fallingThrustBoost
-      fieldValue:
-        stringValue: 1.5
-        objectValue: {fileID: 0}
     - fieldName: fuelConsumedPersecond
       fieldValue:
         stringValue: 30
+        objectValue: {fileID: 0}
+    - fieldName: leftJetChildLocatorEntry
+      fieldValue:
+        stringValue: LeftThruster
+        objectValue: {fileID: 0}
+    - fieldName: rightJetChildLocatorEntry
+      fieldValue:
+        stringValue: RightThruster
+        objectValue: {fileID: 0}
+    - fieldName: baseThrustStrength
+      fieldValue:
+        stringValue: 40
+        objectValue: {fileID: 0}
+    - fieldName: fallingThrustMultiplier
+      fieldValue:
+        stringValue: 1.5
+        objectValue: {fileID: 0}
+    - fieldName: xzMovementBonusMultiplier
+      fieldValue:
+        stringValue: 2
         objectValue: {fileID: 0}

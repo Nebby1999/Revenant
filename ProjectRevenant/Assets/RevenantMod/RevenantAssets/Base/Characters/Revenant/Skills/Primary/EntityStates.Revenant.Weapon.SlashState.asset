@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: EntityStates.Revenant.Weapon.PunchState
+  m_Name: EntityStates.Revenant.Weapon.SlashState
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: EntityStates.Revenant.Weapon.PunchState, Revenant, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    assemblyQualifiedName: EntityStates.RevenantMod.Weapon.SlashState, RevenantMod,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields:
     - fieldName: baseDuration
@@ -27,7 +27,7 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: hitBoxGroupName
       fieldValue:
-        stringValue: Punch
+        stringValue: Slash
         objectValue: {fileID: 0}
     - fieldName: hitEffectPrefab
       fieldValue:
@@ -55,7 +55,7 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: swingEffectMuzzleString
       fieldValue:
-        stringValue: PunchSwing
+        stringValue: Slash
         objectValue: {fileID: 0}
     - fieldName: mecanimHitboxActiveParameter
       fieldValue:

@@ -32,6 +32,7 @@ MonoBehaviour:
     type: 2}
   QuickAccessPipelines:
   - {fileID: 11400000, guid: 4174a17ca8bf31746bad838d92185cb4, type: 2}
+  - {fileID: 11400000, guid: e61ca159672e3444fbae5bc824991e48, type: 2}
   QuickAccessManifests:
   - {fileID: 11400000, guid: 558b7accd11857e449045b790b8e2037, type: 2}
   - {fileID: -3892906877110538616, guid: b562326d1c896424499d07b900b3803d, type: 2}

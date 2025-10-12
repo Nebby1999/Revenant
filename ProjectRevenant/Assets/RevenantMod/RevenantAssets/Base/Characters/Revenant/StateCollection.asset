@@ -15,3 +15,7 @@ MonoBehaviour:
   stateTypes:
   - _typeName: EntityStates.RevenantMod.RevenantCharacterMain, RevenantMod, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.JetpackOn, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.Weapon.SlashState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

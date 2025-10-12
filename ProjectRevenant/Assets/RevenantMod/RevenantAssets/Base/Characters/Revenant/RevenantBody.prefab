@@ -43,12 +43,11 @@ GameObject:
   - component: {fileID: 5532139723560863335}
   - component: {fileID: 8495236968603198120}
   - component: {fileID: 1781188892861136850}
-  - component: {fileID: 8275059953465993303}
-  - component: {fileID: 7602336303163114501}
   - component: {fileID: 4056058227216232372}
   - component: {fileID: 7280072325399467305}
   - component: {fileID: 3940566350423443161}
   - component: {fileID: 6876433594110084095}
+  - component: {fileID: 7602336303163114501}
   - component: {fileID: 4105689160007328065}
   - component: {fileID: 4044239456272685816}
   - component: {fileID: 6621659619872148675}
@@ -252,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _modelTransform: {fileID: 0}
+  _modelTransform: {fileID: 2442301099726278456}
   modelVisibility: {fileID: 0}
   modelBaseTransform: {fileID: 7989365846992970697}
   modelScaleCompensation: 1
@@ -265,48 +264,6 @@ MonoBehaviour:
   normalizeToFloor: 0
   normalSmoothdampTime: 0.1
   normalMaxAngleDelta: 90
---- !u!114 &8275059953465993303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624800342272787527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f23a910c15f8548827d44b2001c4a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterBody: {fileID: 8495236968603198120}
-  baseMaxFuel: 100
-  extraFuelPerExtraJump: 25
-  extraFuelPerExtraJumpStrength: 1
-  fuelRestoredPerSecond: 10
-  overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
-    type: 3}
-  overlayChildLocatorEntry: CrosshairExtras
-  antiCoagulantDuration: 3
-  fuelPerHit: 1
-  baseBleedChance: 5
---- !u!114 &7602336303163114501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624800342272787527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22889dc78fc3dd4468cf6e0b9b6315a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseFuel: 100
-  _extraFuelPerExtraJump: 25
-  _extraFuelPerExtraJumpStrength: 1
-  _fuelRestoredPerSecond: 10
-  _overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
-    type: 3}
-  _overlayHUDChildLocatorEntry: CrosshairExtras
 --- !u!114 &4056058227216232372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,12 +330,34 @@ MonoBehaviour:
   m_Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customName: RocketLauncher
+  customName: Jetpack
   initialStateType:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainStateType:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   debug: 0
+--- !u!114 &7602336303163114501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624800342272787527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22889dc78fc3dd4468cf6e0b9b6315a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jetpackStateMachine: {fileID: 6876433594110084095}
+  _baseFuel: 100
+  _extraFuelPerExtraJump: 25
+  _extraFuelPerExtraJumpStrength: 1
+  _baseFuelRestoredPerSecond: 10
+  _fuelPenaltyRestorationCoefficient: 0.75
+  _overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
+    type: 3}
+  _overlayHUDChildLocatorEntry: CrosshairExtras
+  _fuelPenaltyColorTimer: 0.1
 --- !u!114 &4105689160007328065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,7 +879,7 @@ GameObject:
   - component: {fileID: 6346802966663409908}
   - component: {fileID: 7188616767247096157}
   m_Layer: 0
-  m_Name: PunchHitbox
+  m_Name: SlashHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1287,7 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: -1294804675, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groupName: Punch
+  groupName: Slash
   hitBoxes:
   - {fileID: 7188616767247096157}
 --- !u!114 &3529873633553864271
