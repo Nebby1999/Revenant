@@ -55,7 +55,6 @@ namespace EntityStates.RevenantMod
                 _isInInitialJump = false;
             }
 
-            RevLog.Info($"HasFuel:{(_fuelController.hasFuel ? "t" : "f")}|Velocity:{characterMotor.velocity}|currFuel:{_fuelController.currentFuel}");
             //If we've started going down, we can turn on our jetpack.
             bool shouldTurnOn = _jumpButtonState && !_isInInitialJump && !characterMotor.isGrounded && _fuelController.hasFuel && !_fuelController.isInPenalty;
 

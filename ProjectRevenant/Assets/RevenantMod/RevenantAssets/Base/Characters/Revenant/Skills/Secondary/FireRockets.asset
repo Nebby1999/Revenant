@@ -9,27 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: VoidSlash
+  m_Script: {fileID: 11500000, guid: 3c8435718504fc442816301f861f5fcd, type: 3}
+  m_Name: FireRockets
   m_EditorClassIdentifier: 
-  skillName: VoidSlash
-  skillNameToken: REV_REVENANT_PRIMARY_VOIDSLASH_NAME
-  skillDescriptionToken: REV_REVENANT_PRIMARY_VOIDSLASH_DESC
+  skillName: FireRockets
+  skillNameToken: REV_REVENANT_SECONDARY_FIREROCKETS_NAME
+  skillDescriptionToken: REV_REVENANT_SECONDARY_FIREROCKETS_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon
   activationState:
-    _typeName: EntityStates.RevenantMod.Weapon.SlashState, RevenantMod, Version=0.0.0.0,
+    _typeName: EntityStates.RevenantMod.Weapon.FireRockets, RevenantMod, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  interruptPriority: 0
-  baseRechargeInterval: 0
-  baseMaxStock: 1
-  rechargeStock: 1
+  interruptPriority: 1
+  baseRechargeInterval: 3
+  baseMaxStock: 5
+  rechargeStock: 3
   requiredStock: 1
   stockToConsume: 1
   attackSpeedBuffsRestockSpeed: 0
   attackSpeedBuffsRestockSpeed_Multiplier: 1
-  resetCooldownTimerOnUse: 0
+  resetCooldownTimerOnUse: 1
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
   beginSkillCooldownOnSkillEnd: 0
@@ -42,5 +42,7 @@ MonoBehaviour:
   triggeredByPressRelease: 0
   autoHandleLuminousShot: 1
   hideStockCount: 0
-  stepCount: 1
+  allowEnteringPenalty: 1
+  overuseFuelCost: 20
+  stepCount: 3
   stepGraceDuration: 0.1

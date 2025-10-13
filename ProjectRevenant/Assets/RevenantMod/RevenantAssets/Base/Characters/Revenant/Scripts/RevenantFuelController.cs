@@ -23,6 +23,7 @@ namespace RevenantMod.Survivors
         [SerializeField] private float _extraFuelPerExtraJump;
         [SerializeField] private float _extraFuelPerExtraJumpStrength;
         [SerializeField] private float _baseFuelRestoredPerSecond;
+        [SerializeField] private float _levelFuelRestoredPerSecond;
         [SerializeField] private float _fuelPenaltyRestorationCoefficient;
 
         [Header("UI")]
@@ -105,16 +106,17 @@ namespace RevenantMod.Survivors
 
         private void FixedUpdate()
         {
-            if(NetworkServer.active)
+            if (NetworkServer.active)
             {
-                if(_isPendingPenaltyServer && !_isInPenalty)
+                if (_isPendingPenaltyServer && !_isInPenalty)
                 {
                     SetIsInPenalty(true);
                 }
 
                 AddFuel(fuelRestoredPerSecond * Time.fixedDeltaTime);
-            
-                if(_isInPenalty && currentFuel >= maxFuel)
+
+                //Remove penalty once we're over 100 fuel, if somehow our max fuel is less than base fuel, then just use base fuel.
+                if (_isInPenalty && currentFuel >= Mathf.Min(_baseFuel, maxFuel))
                 {
                     SetIsInPenalty(false);
                 }
@@ -191,6 +193,7 @@ namespace RevenantMod.Survivors
 
         private void RecalculateFuelStats()
         {
+            float levelMinusOne = characterBody.level - 1;
             //Max fuel calculation
             var newMaxFuel = _baseFuel;
             newMaxFuel += _extraFuelPerExtraJump * _extraJumpCount;
@@ -199,6 +202,8 @@ namespace RevenantMod.Survivors
 
             //Fuel restoration calculation
             var newFuelRestoredPerSecond = _baseFuelRestoredPerSecond;
+            var levelFuelRestoredPerSecond = _levelFuelRestoredPerSecond * levelMinusOne;
+            newFuelRestoredPerSecond += levelFuelRestoredPerSecond;
             newFuelRestoredPerSecond *= _isInPenalty ? _fuelPenaltyRestorationCoefficient : 1f;
             fuelRestoredPerSecond = newFuelRestoredPerSecond;
         }

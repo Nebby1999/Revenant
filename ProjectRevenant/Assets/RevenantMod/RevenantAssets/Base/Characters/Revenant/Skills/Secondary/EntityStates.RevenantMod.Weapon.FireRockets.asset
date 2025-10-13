@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 89795172, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: EntityStates.RevenantMod.Weapon.FireRockets
+  m_EditorClassIdentifier: 
+  targetType:
+    assemblyQualifiedName: EntityStates.RevenantMod.Weapon.FireRockets, RevenantMod,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  serializedFieldsCollection:
+    serializedFields:
+    - fieldName: baseDuration
+      fieldValue:
+        stringValue: 0.5
+        objectValue: {fileID: 0}
+    - fieldName: force
+      fieldValue:
+        stringValue: 100
+        objectValue: {fileID: 0}
+    - fieldName: rocketPrefab
+      fieldValue:
+        stringValue: 
+        objectValue: {fileID: 1392364830557211227, guid: 8835afcb6a4e60747b88b3c5a52c868e,
+          type: 3}
+    - fieldName: homingRocketPrefab
+      fieldValue:
+        stringValue: 0.5
+        objectValue: {fileID: 4667999080295977424, guid: d93431a45d1ea464a8a89ea1924aa0ce,
+          type: 3}
+    - fieldName: homingChance
+      fieldValue:
+        stringValue: 30
+        objectValue: {fileID: 0}
+    - fieldName: targetAnticipationRadius
+      fieldValue:
+        stringValue: 0.3
+        objectValue: {fileID: 0}
+    - fieldName: targetAnticipationDistance
+      fieldValue:
+        stringValue: 2048
+        objectValue: {fileID: 0}
+    - fieldName: damageCoef
+      fieldValue:
+        stringValue: 3
+        objectValue: {fileID: 1392364830557211227, guid: 8835afcb6a4e60747b88b3c5a52c868e,
+          type: 3}

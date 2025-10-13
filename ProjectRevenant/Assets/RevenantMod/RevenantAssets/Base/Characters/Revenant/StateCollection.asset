@@ -19,3 +19,9 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   - _typeName: EntityStates.RevenantMod.Weapon.SlashState, RevenantMod, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.Weapon.BaseLauncherState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.Weapon.FireLasers, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.Weapon.FireRockets, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

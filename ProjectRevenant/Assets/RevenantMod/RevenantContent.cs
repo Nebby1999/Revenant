@@ -114,12 +114,18 @@ namespace RevenantMod
             _fieldAssignDispatchers = new Action[]
             {
                 () => ContentUtil.PopulateTypeFields(typeof(Survivors), revenantContentPack.survivorDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Buffs), revenantContentPack.buffDefs, name => "bd" + name)
             };
         }
 
         public static class Survivors
         {
             public static SurvivorDef Revenant;
+        }
+
+        public static class Buffs
+        {
+            public static BuffDef RevenantSnaring;
         }
     }
 }

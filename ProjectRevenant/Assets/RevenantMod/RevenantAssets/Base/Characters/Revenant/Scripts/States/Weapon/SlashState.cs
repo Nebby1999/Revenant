@@ -1,6 +1,8 @@
 using IL.RoR2;
 using MSU;
+using R2API;
 using RevenantMod;
+using RevenantMod.Survivors;
 using RoR2.Skills;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,8 +26,7 @@ namespace EntityStates.RevenantMod.Weapon
 
         public override void AuthorityModifyOverlapAttack(RoR2.OverlapAttack overlapAttack)
         {
-            base.AuthorityModifyOverlapAttack(overlapAttack);
-            RevLog.Error(overlapAttack);
+            overlapAttack.AddModdedDamageType(RevenantSurvivor.snaringDamageType);
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

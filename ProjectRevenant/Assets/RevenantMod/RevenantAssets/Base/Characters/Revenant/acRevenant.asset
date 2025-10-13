@@ -9,24 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865e4cb47023cd24bb19c0183333ab18, type: 3}
+  m_Script: {fileID: 11500000, guid: 918528a7556841c488f5be21ab009be1, type: 3}
   m_Name: acRevenant
   m_EditorClassIdentifier: 
   assets:
+  - {fileID: 1624800342272787527, guid: d93871e79e53d3c47bd167239960fa99, type: 3}
+  - {fileID: 11400000, guid: 18b18484c0af5824dbc50805316d3112, type: 2}
+  - {fileID: 11400000, guid: 86a48be8dbfac4843bcb9a3eadff8d42, type: 2}
+  - {fileID: 11400000, guid: 4d506d2e0180de846b6592223410db6e, type: 2}
+  - {fileID: 11400000, guid: d301ce82f19d802429ed1775a3edb661, type: 2}
+  - {fileID: 11400000, guid: fe4cfee3a6507144abe2bfc191af51af, type: 2}
+  - {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
+  - {fileID: 11400000, guid: a203900026313f441a09ca49774d1ee6, type: 2}
+  - {fileID: 11400000, guid: 1d7a63868b842d641b440f5c30c22e6b, type: 2}
+  - {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}
+  - {fileID: 11400000, guid: d81c1606eb4b42b4783e7f5e965e2790, type: 2}
+  - {fileID: 11400000, guid: e283bf7d3380585408f63848d0d6f7f7, type: 2}
+  - {fileID: 11400000, guid: 46fcf0929e56d964a96af61e1c2be662, type: 2}
+  - {fileID: 11400000, guid: 5443cbc63e0885e4783f42e8996137a3, type: 2}
+  - {fileID: 1392364830557211227, guid: 8835afcb6a4e60747b88b3c5a52c868e, type: 3}
+  - {fileID: 4667999080295977424, guid: d93431a45d1ea464a8a89ea1924aa0ce, type: 3}
   - {fileID: 11400000, guid: 31827c2875607234a8463e90c2c68d26, type: 2}
   - {fileID: 11400000, guid: d3bee3913a20025498449e038602f759, type: 2}
-  - {fileID: 11400000, guid: 063806f37df0bbc4fb668c497f208c49, type: 2}
-  - {fileID: 11400000, guid: 9c89d317e0c3a194698ba34a1720407a, type: 2}
-  - {fileID: 11400000, guid: 6c52903f15b444147b8d23161c16fd10, type: 2}
-  - {fileID: 11400000, guid: a203900026313f441a09ca49774d1ee6, type: 2}
-  - {fileID: 11400000, guid: 5e2508e140bcb094e910b450ad088e87, type: 2}
-  - {fileID: 11400000, guid: 9e1774ee6efda434a85f1fac214549f5, type: 2}
-  - {fileID: 11400000, guid: c39c156d917c2894c92599eb5bb10d1d, type: 2}
-  - {fileID: 11400000, guid: 18b18484c0af5824dbc50805316d3112, type: 2}
-  - {fileID: 1624800342272787527, guid: d93871e79e53d3c47bd167239960fa99, type: 3}
-  - {fileID: 11400000, guid: fe4cfee3a6507144abe2bfc191af51af, type: 2}
-  - {fileID: 11400000, guid: 1d7a63868b842d641b440f5c30c22e6b, type: 2}
-  - {fileID: 11400000, guid: 4d506d2e0180de846b6592223410db6e, type: 2}
   bodyPrefab: {fileID: 1624800342272787527, guid: d93871e79e53d3c47bd167239960fa99,
     type: 3}
   masterPrefab: {fileID: 0}

@@ -32,6 +32,7 @@ namespace EntityStates.RevenantMod
         {
             base.OnEnter();
             fuelController = GetComponent<RevenantFuelController>();
+            characterBody.isSprinting = true;
 
             _gravityModifier = DEFAULT_WORLD_GRAVITY + Mathf.Abs(Physics.gravity.y);
             _thrust = baseThrustStrength + _gravityModifier;
@@ -97,37 +98,9 @@ namespace EntityStates.RevenantMod
                 motorVelocity.z = _xzMovementBonus.z;
             }
 
-            /*
-            if (ShouldApplyVelocity(motorVelocity.x, _xzMovementBonus.x))
-            {
-                motorVelocity.x = _xzMovementBonus.x;
-            }
-            if (ShouldApplyVelocity(motorVelocity.z, _xzMovementBonus.z))
-            {
-                motorVelocity.z = _xzMovementBonus.z;
-            }*/
 
             characterMotor.velocity = motorVelocity;
-            //RevLog.Info(characterMotor.velocity);
         }
-
-        /*private bool ShouldApplyVelocity(float currentVelocity, float desiredVelocity)
-        {
-            //This is a bit fucky, but it should work.
-
-            if (currentVelocity > 0)
-            {
-                //If both of our velocities are greater than 0, and our current velocity is less than the desired velocity, then we should apply it.
-                if (desiredVelocity > 0 && currentVelocity <= desiredVelocity)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }*/
 
         public override void OnExit()
         {

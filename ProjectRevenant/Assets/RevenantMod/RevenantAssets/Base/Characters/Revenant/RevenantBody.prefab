@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490210446996998971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.046, y: 0.377, z: -0.025}
+  m_LocalPosition: {x: 0.7500003, y: 0.2500004, z: 0.0000002887101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -353,6 +353,7 @@ MonoBehaviour:
   _extraFuelPerExtraJump: 25
   _extraFuelPerExtraJumpStrength: 1
   _baseFuelRestoredPerSecond: 10
+  _levelFuelRestoredPerSecond: 0
   _fuelPenaltyRestorationCoefficient: 0.75
   _overlayPrefab: {fileID: 1349207487618217, guid: b14f3a5b452a95f41a66327e2bea6651,
     type: 3}
@@ -936,7 +937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6254155720651078732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.043, y: 0.377, z: -0.025}
+  m_LocalPosition: {x: -0.75000036, y: 0.24999978, z: 0.00000023469335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

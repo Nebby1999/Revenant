@@ -9,18 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: RevenantBodyFireLasers
+  m_Script: {fileID: 11500000, guid: 3c8435718504fc442816301f861f5fcd, type: 3}
+  m_Name: FireLasers
   m_EditorClassIdentifier: 
   skillName: FireLasers
-  skillNameToken: REV_REVENANT_SECONDARY_LASER_NAME
-  skillDescriptionToken: REV_REVENANT_SECONDARY_LASER_DESC
+  skillNameToken: REV_REVENANT_SECONDARY_FIRELASERS_NAME
+  skillDescriptionToken: REV_REVENANT_SECONDARY_FIRELASERS_DESC
   keywordTokens: []
   icon: {fileID: 0}
-  activationStateMachineName: RocketLauncher
+  activationStateMachineName: Weapon
   activationState:
-    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  interruptPriority: 0
+    _typeName: EntityStates.RevenantMod.Weapon.FireLasers, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  interruptPriority: 1
   baseRechargeInterval: 3
   baseMaxStock: 5
   rechargeStock: 3
@@ -28,7 +29,7 @@ MonoBehaviour:
   stockToConsume: 1
   attackSpeedBuffsRestockSpeed: 0
   attackSpeedBuffsRestockSpeed_Multiplier: 1
-  resetCooldownTimerOnUse: 0
+  resetCooldownTimerOnUse: 1
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
   beginSkillCooldownOnSkillEnd: 0
@@ -41,5 +42,7 @@ MonoBehaviour:
   triggeredByPressRelease: 0
   autoHandleLuminousShot: 1
   hideStockCount: 0
+  allowEnteringPenalty: 1
+  overuseFuelCost: 15
   stepCount: 3
-  stepGraceDuration: 0.5
+  stepGraceDuration: 0.1
