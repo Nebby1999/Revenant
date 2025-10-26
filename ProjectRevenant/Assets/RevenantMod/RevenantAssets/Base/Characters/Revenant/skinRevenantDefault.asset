@@ -17,12 +17,13 @@ MonoBehaviour:
   nameToken: 
   unlockableName: 
   unlockableDef: {fileID: 0}
-  rootObject: {fileID: 0}
+  rootObject: {fileID: 4063919377530762282, guid: 4dd3e39b9b6912544bba097b58315154,
+    type: 3}
   skinDefParamsAddress:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
-  skinDefParams: {fileID: 0}
+  skinDefParams: {fileID: 11400000, guid: b731e9f4d72984543aa45e6624bd860f, type: 2}
   optimizedSkinDefParamsAddress:
     m_AssetGUID: 
     m_SubObjectName: 

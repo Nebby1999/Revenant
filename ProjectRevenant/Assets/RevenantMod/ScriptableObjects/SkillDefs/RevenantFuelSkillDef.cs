@@ -23,6 +23,8 @@ namespace RevenantMod
                 fuelController = genericSkill.GetComponent<RevenantFuelController>();
             }
         }
+        [Tooltip("If true, cooldown will not tick while we're in penalty")]
+        public bool noRechargeIfInPenalty;
         [Tooltip("If true, Revenant can utilize this skill even if it means entering his penalty.")]
         public bool allowEnteringPenalty;
         [Tooltip("The amount of fuel that costs firing this skill if you have no stocks left.")]
@@ -141,8 +143,13 @@ namespace RevenantMod
 
         public override void OnFixedUpdate([NotNull] GenericSkill skillSlot, float deltaTime)
         {
-            base.OnFixedUpdate(skillSlot, deltaTime);
             InstanceData data = (InstanceData)skillSlot.skillInstanceData;
+
+            if(data.fuelController)
+            {
+                deltaTime = (data.fuelController.isInPenalty && noRechargeIfInPenalty) ? 0 : deltaTime;
+            }
+            base.OnFixedUpdate(skillSlot, deltaTime);
             if(skillSlot.CanExecute())
             {
                 data.stepResetTimer += deltaTime;

@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 
 namespace RevenantMod.Survivors
 {
-    public class RevenantFuelController : NetworkBehaviour, IStatItemBehavior
+    public class RevenantFuelController : NetworkBehaviour, IStatItemBehavior, IOnDamageDealtServerReceiver
     {
         public static BoolConVar infiniteFuel = new BoolConVar("revenantmod_infinite_fuel", ConVarFlags.ExecuteOnServer, "0", "toggles infinite fuel");
         public CharacterBody characterBody { get; private set; }
@@ -62,6 +62,14 @@ namespace RevenantMod.Survivors
         private int _colorSwitcher;
         private float _fuelPenaltyTimerStopwatch;
 
+        [SyncVar(hook = nameof(OnFuckWeaverSet))]
+        private HurtBoxReference _fuckWeaver;
+
+        private void OnFuckWeaverSet(HurtBoxReference fuckWeaver)
+        {
+            _fuckWeaver = fuckWeaver;
+            RevLog.Info("FuckWeaver reference is set to " + fuckWeaver.ResolveHurtBox());
+        }
         #region Messages
         private void Awake()
         {
@@ -278,5 +286,13 @@ namespace RevenantMod.Survivors
             //Nothin.
         }
 
+        public void OnDamageDealtServer(DamageReport damageReport)
+        {
+            if(!damageReport.victimBody || !damageReport.victimBody.mainHurtBox)
+            {
+                return;
+            }
+            _fuckWeaver = HurtBoxReference.FromHurtBox(damageReport.victimBody.AsValidOrNull()?.mainHurtBox);
+        }
     }
 }

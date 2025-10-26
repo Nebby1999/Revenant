@@ -1,7 +1,9 @@
+using MonoMod.Cil;
 using MSU;
 using R2API;
 using RoR2;
 using RoR2.ContentManagement;
+using RoR2.Orbs;
 using RoR2.Projectile;
 using RoR2BepInExPack.GameAssetPathsBetter;
 using System.Collections;
@@ -21,6 +23,7 @@ namespace RevenantMod.Survivors
         /// Snares an enemy by reducing their movement speed.
         /// </summary>
         public static R2API.DamageAPI.ModdedDamageType snaringDamageType { get; private set; }
+        public static GameObject rocketOrbEffect { get; private set; }
 
         public SurvivorDef survivorDef { get; private set; }
 
@@ -36,6 +39,7 @@ namespace RevenantMod.Survivors
 
         private SurvivorAssetCollection _survivorAssetCollection;
         private BuffDef _bdRevenantSnaring;
+        private EffectComponent _orbEffectDef;
         public void Initialize()
         {
             characterBody._defaultCrosshairPrefab = Addressables.LoadAssetAsync<GameObject>(RoR2_Base_UI.SimpleDotCrosshair_prefab).WaitForCompletion();
@@ -48,8 +52,36 @@ namespace RevenantMod.Survivors
             projectile = _survivorAssetCollection.FindAsset<GameObject>("RevenantRocketHoming");
             projectile.GetComponent<ProjectileDamage>().damageType.AddModdedDamageType(jailingDamageType);
 
+            rocketOrbEffect = _survivorAssetCollection.FindAsset<GameObject>("RocketOrbEffect");
+            _orbEffectDef = rocketOrbEffect.GetComponent<EffectComponent>();
+
+            R2API.OrbAPI.AddOrb<RocketOrb>();
+
             R2API.RecalculateStatsAPI.GetStatCoefficients += HandleRevenantSnaring;
             GlobalEventManager.onServerDamageDealt += HandleDamageTypes;
+
+            On.RoR2.Orbs.OrbEffect.UpdateOrb += ExplicitTargetPosition;
+        }
+
+        // For performance concerns the rocket version of the special utilizes an orb that deals a BlastAttack, since the orb system doesnt support target position via the effect data, this thing exists.
+        private void ExplicitTargetPosition(On.RoR2.Orbs.OrbEffect.orig_UpdateOrb orig, OrbEffect self, float deltaTime)
+        {
+            if(self._effectComponent.effectIndex != _orbEffectDef.effectIndex)
+            {
+                goto origMethod;
+            }
+            if(!self._effectComponent)
+            {
+                goto origMethod;
+            }
+            if(self._effectComponent.effectData == null)
+            {
+                goto origMethod;
+            }
+            self.lastKnownTargetPosition = self._effectComponent.effectData.start;
+
+        origMethod:
+            orig(self, deltaTime);
         }
 
         private void HandleRevenantSnaring(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)

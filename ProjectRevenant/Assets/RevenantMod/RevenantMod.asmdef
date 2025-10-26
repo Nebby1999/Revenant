@@ -36,7 +36,9 @@
         "R2API.Elites.dll",
         "R2API.RecalculateStats.dll",
         "R2API.Director.dll",
-        "Unity.ResourceManager.dll"
+        "Unity.ResourceManager.dll",
+        "MonoMod.Utils.dll",
+        "R2API.Orb.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [

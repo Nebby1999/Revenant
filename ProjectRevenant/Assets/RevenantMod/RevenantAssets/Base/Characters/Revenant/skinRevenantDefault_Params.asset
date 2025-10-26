@@ -12,7 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: -11224053, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: skinRevenantDefault_Params
   m_EditorClassIdentifier: 
-  rendererInfos: []
+  rendererInfos:
+  - renderer: {fileID: 8923447166357540401, guid: 4dd3e39b9b6912544bba097b58315154,
+      type: 3}
+    defaultMaterialAddress:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+    defaultMaterial: {fileID: 2100000, guid: 6ccd3332f98f31043b68a57ca5abde19, type: 2}
+    defaultShadowCastingMode: 1
+    ignoreOverlays: 0
+    hideOnDeath: 0
+    ignoresMaterialOverrides: 0
+  - renderer: {fileID: 5469526457406814206, guid: 4dd3e39b9b6912544bba097b58315154,
+      type: 3}
+    defaultMaterialAddress:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+    defaultMaterial: {fileID: 2100000, guid: e5bbb5d40c560a14286eaf415a2fe69b, type: 2}
+    defaultShadowCastingMode: 1
+    ignoreOverlays: 0
+    hideOnDeath: 0
+    ignoresMaterialOverrides: 0
   gameObjectActivations: []
   meshReplacements: []
   projectileGhostReplacements: []

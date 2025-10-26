@@ -25,3 +25,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   - _typeName: EntityStates.RevenantMod.Weapon.FireRockets, RevenantMod, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.DashState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.BaseBeginBarrageState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.BaseReadyBarrageState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.BaseFireBarrageState, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.BeginLaserBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.ReadyLaserBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.FireLaserBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.BeginRocketBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.ReadyRocketBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - _typeName: EntityStates.RevenantMod.FireRocketBarrage, RevenantMod, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

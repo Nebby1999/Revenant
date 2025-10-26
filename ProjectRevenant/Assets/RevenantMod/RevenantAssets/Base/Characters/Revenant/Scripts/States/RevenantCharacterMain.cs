@@ -15,6 +15,7 @@ namespace EntityStates.RevenantMod
 
         private bool _jumpButtonState;
         private bool _isInInitialJump;
+        private bool _nextStateIsDashState;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -71,11 +72,21 @@ namespace EntityStates.RevenantMod
 
         public override void OnExit()
         {
-            if(isAuthority && _jetpackStateMachine)
+            if(isAuthority && _jetpackStateMachine && !_nextStateIsDashState)
             {
                 _jetpackStateMachine.SetNextState(new Idle());
             }
             base.OnExit();
+        }
+
+        public override void ModifyNextState(EntityState nextState)
+        {
+            base.ModifyNextState(nextState);
+
+            if(nextState is DashState dashState)
+            {
+                _nextStateIsDashState = true;
+            }
         }
     }
 }
